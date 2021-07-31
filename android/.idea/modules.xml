@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BuddyUp.iml" filepath="$PROJECT_DIR$/.idea/modules/BuddyUp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/BuddyUp.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/BuddyUp.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-346857400/BuddyUp.react-native-async-storage_async-storage.iml" filepath="$PROJECT_DIR$/.idea/modules/-346857400/BuddyUp.react-native-async-storage_async-storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1116465044/BuddyUp.react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/.idea/modules/-1116465044/BuddyUp.react-native-community_masked-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/505890883/BuddyUp.react-native-community_viewpager.iml" filepath="$PROJECT_DIR$/.idea/modules/505890883/BuddyUp.react-native-community_viewpager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/372182507/BuddyUp.react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/372182507/BuddyUp.react-native-gesture-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2004647866/BuddyUp.react-native-image-crop-picker.iml" filepath="$PROJECT_DIR$/.idea/modules/-2004647866/BuddyUp.react-native-image-crop-picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-711057126/BuddyUp.react-native-picker_picker.iml" filepath="$PROJECT_DIR$/.idea/modules/-711057126/BuddyUp.react-native-picker_picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1158067887/BuddyUp.react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/-1158067887/BuddyUp.react-native-reanimated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1836472212/BuddyUp.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/1836472212/BuddyUp.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1765433516/BuddyUp.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/1765433516/BuddyUp.react-native-screens.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2109421109/BuddyUp.react-native-vector-icons.iml" filepath="$PROJECT_DIR$/.idea/modules/-2109421109/BuddyUp.react-native-vector-icons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1739214726/BuddyUp.react-native-webview.iml" filepath="$PROJECT_DIR$/.idea/modules/1739214726/BuddyUp.react-native-webview.iml" />
+    </modules>
+  </component>
+</project>
