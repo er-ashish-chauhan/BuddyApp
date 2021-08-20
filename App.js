@@ -57,83 +57,80 @@ const App = () => {
   const Stack = createStackNavigator();
   return (
     <Provider store={store}>
+      {/* <SafeAreaView style={{ flex: 1 }}> */}
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      {/* <Welcome/> */}
+      {/* <OnBoardingSignInScreen /> */}
+      <NavigationContainer>
+        {token && <Stack.Navigator initialRouteName={token}>
+          <Stack.Screen name="Welcome" component={Welcome}
+            options={{
+              header: () => null,
+              gestureEnabled: false,
+            }} />
+          <Stack.Screen name="Login" component={Login}
+            options={{
+              header: () => null,
+              gestureEnabled: false,
+            }} />
+          <Stack.Screen name="OnBoardingSignInScreen" component={OnBoardingSignInScreen}
+            options={{
+              header: () => null,
+              gestureEnabled: false,
+            }} />
 
-      <SafeAreaView style={{ flex: 1 }}>
-
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        {/* <Welcome/> */}
-        {/* <OnBoardingSignInScreen /> */}
-
-        <NavigationContainer>
-          {token && <Stack.Navigator initialRouteName={token}>
-            <Stack.Screen name="Welcome" component={Welcome}
-              options={{
-                header: () => null,
-                gestureEnabled: false,
-              }} />
-            <Stack.Screen name="Login" component={Login}
-              options={{
-                header: () => null,
-                gestureEnabled: false,
-              }} />
-            <Stack.Screen name="OnBoardingSignInScreen" component={OnBoardingSignInScreen}
-              options={{
-                header: () => null,
-                gestureEnabled: false,
-              }} />
-
-            <Stack.Screen name="BuddyUpSwiper" component={BuddyUpSwiper}
-              options={{
-                header: () => null,
-                gestureEnabled: false,
-              }} />
-            {/* <Stack.Screen name="CustomSwiper" component={CustomSwiper}
+          <Stack.Screen name="BuddyUpSwiper" component={BuddyUpSwiper}
+            options={{
+              header: () => null,
+              gestureEnabled: false,
+            }} />
+          {/* <Stack.Screen name="CustomSwiper" component={CustomSwiper}
             options={{
               header: () => null,
               gestureEnabled: false,
             }} /> */}
-            <Stack.Screen name="CustomSwiper" component={DrawerNavigation}
-              options={{
-                header: () => null,
-                gestureEnabled: false,
-              }} />
+          <Stack.Screen name="CustomSwiper" component={DrawerNavigation}
+            options={{
+              header: () => null,
+              gestureEnabled: false,
+            }} />
 
-            <Stack.Screen name="MatchingScreen" component={MatchingScreen}
-              options={{
-                header: () => null,
-                gestureEnabled: false,
-              }} />
+          <Stack.Screen name="MatchingScreen" component={MatchingScreen}
+            options={{
+              header: () => null,
+              gestureEnabled: false,
+            }} />
 
-            <Stack.Screen name="AllUserChatList" component={AllUserChatList}
-              options={{
-                header: () => null,
-                gestureEnabled: false,
-              }} />
+          <Stack.Screen name="AllUserChatList" component={AllUserChatList}
+            options={{
+              header: () => null,
+              gestureEnabled: false,
+            }} />
 
-            <Stack.Screen name="Chat" component={Chat}
-              options={{
-                header: () => null,
-                gestureEnabled: false,
-              }} />
-            <Stack.Screen name="ChangePassword" component={ChangePassword}
-              options={{
-                header: () => null,
-                gestureEnabled: false,
-              }} />
-            <Stack.Screen name="ForgotPassword" component={ForgotPassword}
-              options={{
-                header: () => null,
-                gestureEnabled: false,
-              }} />
+          <Stack.Screen name="Chat" component={Chat}
+            options={{
+              header: () => null,
+              gestureEnabled: false,
+            }} />
+          <Stack.Screen name="ChangePassword" component={ChangePassword}
+            options={{
+              header: () => null,
+              gestureEnabled: false,
+            }} />
+          <Stack.Screen name="ForgotPassword" component={ForgotPassword}
+            options={{
+              header: () => null,
+              gestureEnabled: false,
+            }} />
 
 
 
-          </Stack.Navigator>
-          }
+        </Stack.Navigator>
+        }
 
-        </NavigationContainer>
+      </NavigationContainer>
 
-      </SafeAreaView>
+      {/* </SafeAreaView> */}
     </Provider>
   );
 };

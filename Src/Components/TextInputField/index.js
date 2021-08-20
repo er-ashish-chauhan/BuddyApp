@@ -10,14 +10,14 @@ const TextInputField = (props) => {
         password,
         width
     } = props
-    return(
+    return (
         <View style={[styles.inputView,]}>
             <TextInput
-            {...props}
-            style={[styles.textInputStyle,]}
-             secureTextEntry={password ? password :null}
-             placeholder={placeHolderText}
-             placeholderTextColor = {placeHolderTextColor}
+                {...props}
+                style={[styles.textInputStyle,]}
+                secureTextEntry={password ? password : null}
+                placeholder={placeHolderText}
+                placeholderTextColor={placeHolderTextColor}
             />
         </View>
     )

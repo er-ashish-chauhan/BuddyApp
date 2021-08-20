@@ -1,11 +1,11 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import {  moderateScale, scale, verticalScale } from 'react-native-size-matters';
-import { colors, fontNames , typography} from "../../Theme";
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import { colors, fontNames, typography } from "../../Theme";
 
 const width = Dimensions.get('screen').width
 
 const styles = StyleSheet.create({
-   
+
     headingView: {
         flex: 0.17,
         flexDirection: "row",
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     iconStylePage2: {
         height: verticalScale(70),
         width: scale(70),
-        marginTop:moderateScale(10)
+        marginTop: moderateScale(10)
     },
     inputHeadingText: {
         alignSelf: "flex-start",
@@ -37,17 +37,17 @@ const styles = StyleSheet.create({
         color: colors.secondaryBlue,
         marginBottom: 5,
     },
-    inputViewPage2:{ 
-        flex: 0.5, 
-        justifyContent:"center", 
-        alignItems:"center" , 
-        
+    inputViewPage2: {
+        flex: 0.5,
+        justifyContent: "center",
+        alignItems: "center",
+
     },
-    dropDownView:{
-        flex: 0.5, 
-        justifyContent:"center", 
-        alignItems:"flex-start",
-      width:'95%',borderWidth:2
+    dropDownView: {
+        flex: 0.5,
+        justifyContent: "center",
+        alignItems: "flex-start",
+        width: '95%', borderWidth: 2
     },
     buttonPage2: {
         height: 50,
@@ -56,25 +56,27 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff',
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom:8
+        marginBottom: 8
     },
-    buttonTextPage2:{
-        color:colors.white, 
-        fontWeight:"bold", 
-        fontSize:15
+    buttonTextPage2: {
+        color: colors.white,
+        fontWeight: "bold",
+        fontSize: 15
     },
-    privacyPolicyView:{
-        paddingHorizontal:35, 
-        justifyContent:"center", 
-        alignItems:"center"
+    privacyPolicyView: {
+        paddingHorizontal: 35,
+        justifyContent: "center",
+        alignItems: "center"
     },
-    privacyPolicyText:{
-        fontSize:14, 
-        marginTop:10, 
-        textAlign:"center"
+    privacyPolicyText: {
+        fontSize: 14,
+        marginTop: 10,
+        textAlign: "center"
     },
     header: {
-        flex: 0.08,
+        // flex: 0.08,
+        marginTop: "14%",
+        marginBottom: 13,
         backgroundColor: colors.white,
         width: "100%",
         justifyContent: "center",
@@ -84,14 +86,28 @@ const styles = StyleSheet.create({
     headerLeftIcon: {
         height: 30,
         width: 30,
-        left: 15,
+        left: 10,
         position: "absolute",
         alignItems: "center",
         justifyContent: "center"
     },
     headerTitle: {
         fontSize: 22,
+        fontFamily: fontNames.boldFont,
+        fontWeight: "bold"
     },
+    container: {
+        borderTopWidth: 1.5,
+        marginTop: 5,
+        borderTopColor: "#ccc",
+        padding: 20
+    },
+    contentText: {
+        fontSize: typography.FONT_SIZE_14,
+        lineHeight: typography.FONT_SIZE_18,
+        textAlign: "justify",
+        fontFamily: fontNames.regularFont
+    }
 
 })
 export default styles;

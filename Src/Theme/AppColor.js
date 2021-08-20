@@ -7,5 +7,7 @@ export const colors = {
     accentOrange:"#EF5D60",
     white:"#ffffff",
     black:"#000000",
-    lightGray:"#f2f2f2"
+    lightGray:"#f2f2f2",
+    lableColor: "#006cac",
+    redColor: "#d60000"
 }

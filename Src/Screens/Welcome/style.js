@@ -1,20 +1,24 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import { colors, fontNames , typography} from "../../Theme";
-const width = Dimensions.get('screen').width
-import { verticalScale,scale, moderateScale } from 'react-native-size-matters';
+import { colors, fontNames, typography } from "../../Theme";
+const { width, height } = Dimensions.get("window");
+import { verticalScale, scale, moderateScale } from 'react-native-size-matters';
 const styles = StyleSheet.create({
-    mainWrapper: {
+    container: {
         flex: 1,
+    },
+    mainWrapper: {
+        // flex: 1,
+        height: height,
         alignItems: "center"
     },
-    headingView:{
-        flexDirection:"row", 
-        top:80
+    headingView: {
+        flexDirection: "row",
+        top: 80
     },
-    headingText:{
-        fontSize:35, 
-        fontWeight:"bold", 
-        color:"#ffffff",
+    headingText: {
+        fontSize: 35,
+        fontWeight: "bold",
+        color: "#ffffff",
     },
     logoView: {
         justifyContent: "flex-end",
@@ -22,22 +26,22 @@ const styles = StyleSheet.create({
         width: "100%",
 
     },
-    logo:{ 
-        height:verticalScale(260), 
-        width:scale(260), 
-        bottom:-moderateScale(80), 
-        marginLeft:moderateScale(20), 
+    logo: {
+        height: verticalScale(260),
+        width: scale(260),
+        bottom: -moderateScale(80),
+        marginLeft: moderateScale(20),
     },
-    bottomView:{ 
-        flex: 0.65, 
-        width: "100%", 
-        alignItems: "center", 
-        paddingTop: 25 
+    bottomView: {
+        flex: 0.65,
+        width: "100%",
+        alignItems: "center",
+        paddingTop: 25
     },
-    bottomTextView:{ 
-        paddingHorizontal: 30, 
-        flex: 0.4, 
-        marginTop: 50 
+    bottomTextView: {
+        paddingHorizontal: 30,
+        flex: 0.4,
+        marginTop: 50
     },
     text1: {
         color: "black",
@@ -50,10 +54,10 @@ const styles = StyleSheet.create({
         // fontFamily:fontNames.regularFont
 
     },
-    buttonView:{
-        flex:0.6, 
-        width:"100%", 
-        alignItems:"center",
+    buttonView: {
+        flex: 0.6,
+        width: "100%",
+        alignItems: "center",
         // justifyContent:"space-evenly"
     },
     registerButton: {
@@ -68,7 +72,7 @@ const styles = StyleSheet.create({
             width: 4,
             height: 4,
         },
-        borderColor:'gray',
+        borderColor: 'gray',
         shadowOpacity: 0.29,
         shadowRadius: 4.65,
         elevation: 7,
@@ -87,8 +91,8 @@ const styles = StyleSheet.create({
     },
     signInText: {
         color: colors.primaryBlue,
-    //    fontFamily:fontNames.regularFont,
-       fontSize:typography.FONT_SIZE_16
+        //    fontFamily:fontNames.regularFont,
+        fontSize: typography.FONT_SIZE_16
     },
     forgotPwd: {
         position: 'absolute',
@@ -107,12 +111,13 @@ const styles = StyleSheet.create({
         marginBottom: 15,
         color: "black"
     },
-    appLogoView:{
-        flex: 0.4, 
-        backgroundColor: "#0090e6" , 
-        width:"100%",
-        alignItems:"center", 
-        justifyContent:"flex-end"
+    appLogoView: {
+        flex: 0.4,
+        paddingTop: '10%',
+        backgroundColor: "#0090e6",
+        width: "100%",
+        alignItems: "center",
+        justifyContent: "flex-end"
     }
 
 })

@@ -13,7 +13,9 @@ const styles = StyleSheet.create({
         width: "100%"
     },
     header: {
-        height: 55,
+
+        paddingTop:'10%',
+        height: '10%',
         width: "100%",
         backgroundColor: colors.primaryBlue,
         flexDirection: "row"

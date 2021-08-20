@@ -4,7 +4,10 @@ import { textScale } from './responsiveStyles';
 
 
 export const fontNames = {
-    regularFont: "MinionPro-Regular",
+    regularFont: "ProximaNova-Regular",
+    extraBoldFont: "Proxima Nova Extrabold",
+    boldFont: "Proxima Nova Bold",
+    thinFonts: "Proxima Nova Thin",
 
 }
 

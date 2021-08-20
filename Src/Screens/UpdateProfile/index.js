@@ -3,46 +3,69 @@ import React, { useState, useEffect, useRef, } from 'react';
 import {
     View,
     Text,
-    SafeAreaView,
-    StatusBar,
+    TextInput,
     TouchableOpacity,
     Image,
     StyleSheet,
     ImageBackground,
-    ScrollView
+    ScrollView,
+    Dimensions,
+    Platform,
+    ActivityIndicator
 } from 'react-native';
 import styles from './style';
 import TextInputField from "../../Components/TextInputField";
-import ViewPager from '@react-native-community/viewpager';
 import { Images, colors, typography } from "../../Theme";
 import RNPickerSelect from 'react-native-picker-select';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ImagePicker, { openCamera } from 'react-native-image-crop-picker';
 import { useDispatch } from "react-redux";
-import { updateAction } from "../../store/actions/authenticationActions";
+import { updateAction, updateAvatar, getUserDetails } from "../../store/actions/authenticationActions";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { set } from "react-native-reanimated";
+import Toast from 'react-native-simple-toast';
 
+import { set } from "react-native-reanimated";
+import { Loader } from "../../Components/Loader";
+import { useSelector } from "react-redux";
+import { APP_BASE_URL, BREEDS } from "../../Theme/AppConstants";
+const { width, height } = Dimensions.get("window");
 const age = [
-    { label: '6 month', value: 0.5 },
-    { label: '1 year', value: 1 },
-    { label: '2 year', value: 2 },
-    { label: '3 year', value: 3 },
-    { label: '4 year', value: 4 },
+    { label: '6 Months', value: 0.5 },
+    { label: '1 Year', value: 1 },
+    { label: '2 Years', value: 2 },
+    { label: '3 Years', value: 3 },
+    { label: '4 Years', value: 4 },
+    { label: '5 Years', value: 5 },
+    { label: '6 Years', value: 6 },
+    { label: '7 Years', value: 7 },
+    { label: '8 Years', value: 8 },
+    { label: '9 Years', value: 9 },
+    { label: '10 Years', value: 10 },
+    { label: '11 Years', value: 11 },
+    { label: '12 Years', value: 12 },
+    { label: '13 Years', value: 13 },
+    { label: '14 Years', value: 14 },
+    { label: '15 Years', value: 15 },
+    { label: '16 Years', value: 16 },
+    { label: '17 Years', value: 17 },
+    { label: '18 Years', value: 18 },
+    { label: '19 Years', value: 19 },
+    { label: '20 Years', value: 20 },
 ]
 
 const size = [
     { label: '15 lbs', value: '15lbs' },
     { label: '15-25 lbs', value: '1525lbs' },
     { label: '25-40 lbs', value: '2540lbs' },
-    { label: '4060lbs', value: '60lbs' },
+    { label: '40-60 lbs', value: '60lbs' },
+    { label: '60+ lbs', value: '60+lbs' },
 ]
 
 const levels = [
-    { label: 'High energy', value: 'Highenergy' },
-    { label: 'Work hard play hard', value: 'Workhardplay hard' },
-    { label: 'Sometimes mellow', value: 'Sometimesmellow' },
-    { label: 'Couch potato', value: 'Couch potato' },
+    { label: 'High Energy', value: 'Highenergy' },
+    { label: 'Work Hard Play Hard', value: 'WorkhardplayHard' },
+    { label: 'Sometimes Mellow', value: 'Sometimesmellow' },
+    { label: 'Couch Potato', value: 'CouchPotato' },
 ]
 
 const breed = [
@@ -56,153 +79,348 @@ const breed = [
     { label: 'American English Coonhound', value: 'AmericanEnglishCoonhound' },
     { label: 'American Eskimo Dog', value: 'AmericanEskimoDog' },
 ]
-   export const ProfileUpate = (props) => {
-const dispatch=useDispatch()
+export const ProfileUpate = (props) => {
+    const dispatch = useDispatch();
+    // const stateData = useSelector((state) => state.authenticationReducer)
+    const [image, setImage] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+    const [BFOOD, setBFood] = useState(false)
+    const [BBALL, setBBall] = useState(false)
+    const [BQUALITY, setBQuality] = useState(false)
+    const [BBED, setBBED] = useState(false)
+    const [BLEASH, setBLeash] = useState(false)
+    const [FFOOD, setFFood] = useState(false)
+    const [FBALL, setFBall] = useState(false)
+    const [FQUALITY, setFQuality] = useState(false)
+    const [FBED, setFBED] = useState(false)
+    const [FLEASH, setFLeash] = useState(false)
+
+    const [BAGE, setBAge] = useState()
+    const [BSIZE, setBSize] = useState()
+    const [BLEVELS, setBLevelse] = useState()
+    const [BBREED, setBBreed] = useState()
+    const [FAGE, setFAge] = useState()
+    const [FSIZE, setFSize] = useState()
+    const [FLEVELS, setFLevelse] = useState()
+    const [FBREED, setFBreed] = useState()
 
 
+    useEffect(() => {
+        get_UserDetails();
+    }, [])
 
-    const [image,setImage]=useState(null)
+    const placeholderAge = {
+        label: 'Age..',
+        value: null,
+        color: '#9EA0A4',
+    };
 
-       const [BFOOD, setBFood] = useState(false)
-       const [BBALL, setBBall] = useState(false)
-       const [BQUALITY, setBQuality] = useState(false)
-       const [BBED, setBBED] = useState(false)
-       const [BLEASH, setBLeash] = useState(false)
-       const [FFOOD, setFFood] = useState(false)
-       const [FBALL, setFBall] = useState(false)
-       const [FQUALITY, setFQuality] = useState(false)
-       const [FBED, setFBED] = useState(false)
-       const [FLEASH, setFLeash] = useState(false)
-   
-       const [BAGE, setBAge] = useState()
-       const [BSIZE, setBSize] = useState()
-       const [BLEVELS, setBLevelse] = useState()
-       const [BBREED, setBBreed] = useState()
-       const [FAGE, setFAge] = useState()
-       const [FSIZE, setFSize] = useState()
-       const [FLEVELS, setFLevelse] = useState()
-       const [FBREED, setFBreed] = useState()
-   
+    const placeholderSize = {
+        label: 'Size...',
+        value: null,
+        color: '#9EA0A4',
+    };
 
-       useEffect(()=>{
-        AsyncStorage.getItem('detail').then((res)=>{
-            let parseData=JSON.parse(res)
-            console.log(parseData);
-        setName(parseData.name)
-        setBuddyName(parseData.buddy_name)
-        setBAge(parseData.age)
-        setBBreed(parseData.breed)
-        setBSize(parseData.size)
-        setBLevelse(parseData.energyLevel)
+    const placeholderLevels = {
+        label: 'Levels...',
+        value: null,
+        color: '#9EA0A4',
+    };
 
-        setFAge(parseData.pereferences.age)
-        setFBreed(parseData.pereferences.breed)
-        setFSize(parseData.pereferences.size)
-        setFLeash(parseData.pereferences.energyLevel)
-        
-        })
-        },[])
+    const placeholderBreed = {
+        label: 'Breeds...',
+        value: null,
+        color: '#9EA0A4',
+    };
+    const [profileImage, setProfileImage] = useState("");
+    const [name, setName] = useState('')
+    const [buddyName, setBuddyName] = useState('')
+    const [address, setAddress] = useState('')
+    const [city, setCity] = useState('')
+    const [state, setState] = useState('')
+    const [imageLoading, setImageLoading] = useState(false);
+    const [bio, setBio] = useState("");
+    const pickerRef = useRef()
 
-       const placeholderAge = {
-           label: 'Age..',
-           value: null,
-           color: '#9EA0A4',
-         };
-   
-         const placeholderSize = {
-           label: 'Size...',
-           value: null,
-           color: '#9EA0A4',
-         };
-   
-         const placeholderLevels = {
-           label: 'Levels...',
-           value: null,
-           color: '#9EA0A4',
-         };
-   
-         const placeholderBreed = {
-           label: 'Breeds...',
-           value: null,
-           color: '#9EA0A4',
-         };
-   const [email,setEmail]=useState('')
-   const [password,setPassword]=useState('')
-   const [name,setName]=useState('')
-   const [buddyName,setBuddyName]=useState('')
-      
-    
-   const pickerRef = useRef()
-   
-   
-     
-
-    const openCamera=()=>{
-
-        ImagePicker.openPicker({
-            width: 300,
-            height: 400,
-            cropping: true
-        }).then(image => {
-            setImage(image.path)
-        });
+    //get User details
+    const get_UserDetails = () => {
+        setIsLoading(true);
+        const action = getUserDetails(onFetchSuccess, onAPIError);
+        dispatchAction(action);
     }
+
+    //dispatch actions 
+    const dispatchAction = async (action) => {
+        try {
+            await dispatch(action);
+        } catch (err) {
+            setIsLoading(false);
+            setImageLoading(false);
+            console.log(err, "Error from image")
+        }
+    }
+
+    // method used for fetch api success 
+    const onFetchSuccess = (result) => {
+        setIsLoading(false);
+        console.log(JSON.stringify(result.data, null, 1), "data")
+        let userData = result.data.data[0];
+        if (userData.interests.includes('bBall')) {
+            setBBall(true)
+        }
+        if (userData.interests.includes('bLeash')) {
+            setBLeash(true)
+        }
+        if (userData.interests.includes('bQuality')) {
+            setBQuality(true)
+        }
+        if (userData.interests.includes('bBed')) {
+            setBBED(true)
+        }
+        if (userData.interests.includes('bFood')) {
+            setBFood(true)
+        }
+
+        ////
+        if (userData.pereferences.interests.includes('fBall')) {
+            setFBall(true)
+        }
+        if (userData.pereferences.interests.includes('fLeash')) {
+            setFLeash(true)
+        }
+        if (userData.pereferences.interests.includes('fQuality')) {
+            setFQuality(true)
+        }
+        if (userData.pereferences.interests.includes('fBed')) {
+            setFBED(true)
+        }
+        if (userData.pereferences.interests.includes('fFood')) {
+            setFFood(true)
+        }
+        console.log(parseFloat(userData.age), "parseFloat(userData.age)")
+        setName(userData.name)
+        setBuddyName(userData.buddyName)
+        setBAge(parseFloat(userData.age))
+        setBBreed(userData.breed)
+        setBSize(userData.size)
+        setBLevelse(userData.energyLevel)
+        //
+        setProfileImage(userData.avatar ? APP_BASE_URL + "/uploads/" + userData.avatar : "");
+        setAddress(userData.address ? userData.address : "");
+        setBio(userData.description ? userData.description : "");
+        setCity(userData.city ? userData.city : "");
+        setState(userData.state ? userData.state : "");
+        setFAge(userData.pereferences.age)
+        setFBreed(userData.pereferences.breed)
+        setFSize(userData.pereferences.size)
+        setFLevelse(userData.pereferences.energyLevel)
+
+    }
+
+    const imagePicker = () => {
+        try {
+            ImagePicker.openPicker({
+                cropping: true,
+                mediaType: "photo",
+                smartAlbums: ["UserLibrary", "RecentlyAdded", "Regular", "Screenshots", "PhotoStream"]
+            }).then(image => {
+                updateProfileImage(image);
+                console.log(image, "image....")
+            });
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const updateProfileImage = async (image) => {
+        setImageLoading(true);
+        const formData = new FormData();
+        formData.append("avatar", {
+            name: image.filename,
+            type: image.mime,
+            uri: Platform.OS === "android" ? image.sourceURL : image.sourceURL.replace("file://", "")
+        });
+        console.log(formData, "image")
+        const action = updateAvatar(formData, (res) => onAPISuccess(res, image), onAPIError);
+        dispatchAction(action);
+    }
+
+    // method called on api success
+    const onAPISuccess = async (result, image) => {
+        setImageLoading(false);
+        await setImage(image);
+        Toast.show(result.data.msg, Toast.LONG)
+    }
+
+    const onAPIError = async (error) => {
+        setImageLoading(false);
+        setIsLoading(false);
+        Toast.show(error.data.msg, Toast.LONG)
+    }
+
+    const buttonHandler = () => {
+        if (BAGE == undefined && BAGE == null) {
+            alert('Please select age.')
+        }
+        else if (name.trim().length == 0) {
+            alert('Please enter name.')
+        }
+        else if (address.trim().length == 0) {
+            alert('Please enter address.')
+        }
+        else if (city.trim().length == 0) {
+            alert('Please enter city.')
+        }
+        else if (state.trim().length == 0) {
+            alert('Please enter state.')
+        }
+        else if (buddyName.trim().length == 0) {
+            alert('Please enter buddy name.')
+        }
+        else if (BLEVELS == undefined && BLEVELS == null) {
+            alert('Please select level.')
+        }
+        else if (BSIZE == undefined && BSIZE == null) {
+            alert('Please select size.')
+        }
+        else if (BBREED == undefined && BBREED == null) {
+            alert('Please select breed.')
+        }
+
+        else if (FAGE == undefined && FAGE == null) {
+            alert('Please select pereference age.')
+        }
+        else if (FLEVELS == undefined && FLEVELS == null) {
+            alert('Please select pereference level.')
+        }
+        else if (FSIZE == undefined && FSIZE == null) {
+            alert('Please select pereference size.')
+        }
+        else if (FBREED == undefined && FBREED == null) {
+            alert('Please select pereferences breed.')
+        }
+        else {
+            dispatch(updateAction(
+                JSON.stringify({
+                    "address": address,
+                    "state": state,
+                    "description": bio,
+                    "city": city,
+                    "name": name.trim(),
+                    "buddyName": buddyName.trim(),
+                    "age": BAGE.toString(),
+                    "size": BSIZE,
+                    "energyLevel": BLEVELS,
+                    "breed": BBREED,
+                    "interests": [
+                        BBALL && "bBall",
+                        BLEASH && "bLeash",
+                        BQUALITY && "bQuality",
+                        BBED && "bBed",
+                        BFOOD && "bFood"
+                    ],
+                    "pereferences": {
+                        "age": FAGE.toString(),
+                        "size": FSIZE,
+                        "energyLevel": FLEVELS,
+                        "breed": FBREED,
+                        "interests": [
+                            FBALL && "FBALL",
+                            FLEASH && "fLeash",
+                            FQUALITY && "fQuality",
+                            FBED && "fBed",
+                            FFOOD && "fFood"
+                        ]
+                    }
+                }),
+                props.navigation
+
+            ))
+        }
+    }
+
 
     const MoreAboutBuddy = () => {
         return (
-            <>
-                <View style={[styles.headingView, { flex: 0.08 }]}>
-                    <Text style={[styles.headingText,]}>Tell us more about Buddy!</Text>
-                </View>
-                <View style={{ flex: 0.55, }}>
-                    <View style={[styles.inputViewPage2, { flex: 0.28, }]}>
-                        
-                    <View style={styles.viewOne}>
-                        <View>
-                            <Text style={styles.welcomeText}>We're so glad you're here.</Text>
-                            <Text style={styles.text1}>What should we call you?</Text>
+            <View>
+                <View style={{}}>
+                    <View style={[styles.inputViewPage2, {}]}>
+                        <View style={styles.viewOne}>
+                            <View>
+                                <Text style={styles.text1}>What should we call you?</Text>
+                            </View>
+                            <TextInputField
+                                value={name}
+                                onChangeText={(v) => setName(v)}
+                                placeHolderText={"enter Name"}
+                                placeHolderTextColor={"gray"}
+                            />
                         </View>
-
-                        <TextInputField
-                        value={name}
-                        onChangeText={(v)=>setName(v)}
-                            placeHolderText={"enter Name"}
-                            placeHolderTextColor={"gray"}
-                        />
-
-                        {/* <TouchableOpacity
-                                style={styles.registerButton}>
-                                <Text>Get Started</Text>
-                            </TouchableOpacity> */}
-                    </View>
-
-
-                    <View style={[styles.viewOne, { marginBottom: 20 }]}>
-                        <View>
-                            <Text style={styles.text1}>What should we call your best friend?</Text>
+                        <View style={[styles.viewOne, { marginTop: 10 }]}>
+                            <View>
+                                <Text style={[styles.text1, { marginTop: 10 }]}>What should we call your best friend?</Text>
+                            </View>
+                            <TextInputField
+                                onChangeText={(v) => setBuddyName(v)}
+                                value={buddyName}
+                                placeHolderText={"Buddy"}
+                                placeHolderTextColor={"gray"}
+                            />
                         </View>
-
-                        <TextInputField
-                        onChangeText={(v)=>setBuddyName(v)}
-                        value={buddyName}
-                            placeHolderText={"Buddy"}
-                           placeHolderTextColor={"gray"}
-                       
-                        />
-                        {/* <TouchableOpacity
-                                style={styles.registerButton}>
-                                <Text>Get Started</Text>
-                            </TouchableOpacity> */}
-                    </View>
-
-
+                        <View style={[styles.viewOne, { marginTop: 10 }]}>
+                            <View>
+                                <Text style={[styles.text1, { marginTop: 10 }]}>Bio</Text>
+                            </View>
+                            <View style={styles.inputContainer}>
+                                <TextInput
+                                    value={bio}
+                                    onChangeText={text => setBio(text)}
+                                    multiline={true}
+                                    numberOfLines={3}
+                                    placeholder="Bio"
+                                    style={styles.bioField}
+                                    placeHolderTextColor="#ccc"
+                                />
+                            </View>
+                        </View>
+                        <View style={[styles.viewOne, { marginTop: 10 }]}>
+                            <View>
+                                <Text style={[styles.text1, { marginTop: 10 }]}>Address</Text>
+                            </View>
+                            <TextInputField
+                                onChangeText={(v) => setAddress(v)}
+                                value={address}
+                                placeHolderText={"Address"}
+                                placeHolderTextColor={"gray"}
+                            />
+                        </View>
+                        <View style={[styles.viewOne, { marginTop: 10 }]}>
+                            <View>
+                                <Text style={[styles.text1, { marginTop: 10 }]}>City</Text>
+                            </View>
+                            <TextInputField
+                                onChangeText={(v) => setCity(v)}
+                                value={city}
+                                placeHolderText={"City"}
+                                placeHolderTextColor={"gray"}
+                            />
+                        </View>
+                        <View style={[styles.viewOne, { marginTop: 10, marginBottom: 20 }]}>
+                            <View>
+                                <Text style={[styles.text1, { marginTop: 10 }]}>State</Text>
+                            </View>
+                            <TextInputField
+                                onChangeText={(v) => setState(v)}
+                                value={state}
+                                placeHolderText={"State"}
+                                placeHolderTextColor={"gray"}
+                            />
+                        </View>
                         <View style={styles.view3}>
-                          
-                          
                             <View style={[{ width: '25%', alignItems: "flex-start", }]}>
-                                <Text style={[styles.inputHeadingText, { paddingLeft: 15 }]}>AGE</Text>
+                                <Text style={[styles.inputHeadingText, { paddingLeft: 5 }]}>AGE</Text>
                                 <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', }]}>
-                                <RNPickerSelect
+                                    <RNPickerSelect
                                         placeholder={placeholderAge}
                                         items={age}
                                         onValueChange={value => {
@@ -214,14 +432,13 @@ const dispatch=useDispatch()
                                         ref={pickerRef}
                                         Icon={() => {
                                             return <Icon name="caret-down" size={20} color="gray" />;
-                                          }}
-                                          useNativeAndroidPickerStyle={false}
-                                         
+                                        }}
+                                        useNativeAndroidPickerStyle={false}
                                     />
                                 </TouchableOpacity>
                             </View>
                             <View style={[{ width: '35%', alignItems: "center" }]}>
-                                <Text style={[styles.inputHeadingText, { paddingLeft: 25 }]}>SIZE</Text>
+                                <Text style={[styles.inputHeadingText, { paddingLeft: 10 }]}>SIZE</Text>
                                 <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', }]}>
                                     <RNPickerSelect
                                         placeholder={placeholderSize}
@@ -235,14 +452,14 @@ const dispatch=useDispatch()
                                         ref={pickerRef}
                                         Icon={() => {
                                             return <Icon name="caret-down" size={20} color="gray" />;
-                                          }}
+                                        }}
                                     />
                                 </TouchableOpacity>
                             </View>
                             <View style={[{ width: '40%', alignItems: "flex-end" }]}>
-                                <Text style={[styles.inputHeadingText, { paddingLeft: 28 }]}>ENERGY LEVEL</Text>
+                                <Text style={[styles.inputHeadingText, { paddingLeft: 18 }]}>ENERGY LEVEL</Text>
                                 <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', }]}>
-                                <RNPickerSelect
+                                    <RNPickerSelect
                                         placeholder={placeholderLevels}
                                         items={levels}
                                         onValueChange={value => {
@@ -254,38 +471,36 @@ const dispatch=useDispatch()
                                         ref={pickerRef}
                                         Icon={() => {
                                             return <Icon name="caret-down" size={20} color="gray" />;
-                                          }}
+                                        }}
                                     />
                                 </TouchableOpacity>
                             </View>
-
                         </View>
-
                     </View>
-                    <View style={[styles.inputViewPage2, { flex: 0.30, marginTop: 10 }]}>
-                        <Text style={styles.inputHeadingText}>BREED</Text>
+                    <View style={[styles.inputViewPage2, { flex: 0.30, marginTop: 20 }]}>
+                        <Text style={[styles.inputHeadingText, { paddingLeft: 25 }]}>BREED</Text>
                         <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', }]}>
-                                <RNPickerSelect
-                                        placeholder={placeholderBreed}
-                                        items={breed}
-                                        onValueChange={value => {
-                                            setBBreed(value)
-                                        }}
-                                        style={pickerSelectStyles}
-                                        value={BBREED}
-                                        useNativeAndroidPickerStyle={false}
-                                        ref={pickerRef}
-                                        Icon={() => {
-                                            return <Icon name="caret-down" size={20} color="gray" />;
-                                          }}
-                                    />
-                                </TouchableOpacity>
+                            <RNPickerSelect
+                                placeholder={placeholderBreed}
+                                items={BREEDS}
+                                onValueChange={value => {
+                                    setBBreed(value)
+                                }}
+                                style={pickerSelectStyles}
+                                value={BBREED}
+                                useNativeAndroidPickerStyle={false}
+                                ref={pickerRef}
+                                Icon={() => {
+                                    return <Icon name="caret-down" size={20} color="gray" />;
+                                }}
+                            />
+                        </TouchableOpacity>
                     </View>
-                    <View style={[styles.inputViewPage2, { flex: 0.42, }]}>
+                    <View style={[styles.inputViewPage2, { flex: 0.42, marginTop: 20 }]}>
                         <View style={{ width: '90%', justifyContent: "space-between", alignItems: "center" }}>
 
-                            <Text style={[styles.inputHeadingText, { paddingLeft: 15 }]}>iNTERESTS</Text>
-                            <View style={{ flexDirection: "row" }}>
+                            <Text style={[styles.inputHeadingText, { paddingLeft: 5 }]}>INTERESTS</Text>
+                            <View style={{ flexDirection: "row", paddingBottom: 10 }}>
                                 <View style={styles.circleView}>
                                     <TouchableOpacity
                                         onPress={() => setBFood(!BFOOD)}
@@ -306,7 +521,6 @@ const dispatch=useDispatch()
                                         />
                                     </TouchableOpacity>
                                 </View>
-
                                 <View style={styles.circleView}>
                                     <TouchableOpacity
                                         onPress={() => setBQuality(!BQUALITY)}
@@ -343,17 +557,16 @@ const dispatch=useDispatch()
                         </View>
                     </View>
                 </View>
-
-                <View style={[styles.headingView, { flex: 0.08, backgroundColor: "#e6f5ff" }]}>
-                    <Text style={[styles.headingText,]}>What does Buddy want in a friend?</Text>
+                <View style={[styles.headingView, { flex: 0.08, backgroundColor: "#e6f5ff", marginTop: 20 }]}>
+                    <Text style={[styles.headingText, { color: colors.black, paddingTop: 20}]}>What does Buddy want in a friend?</Text>
                 </View>
                 <View style={{ flex: 0.55, backgroundColor: "#e6f5ff" }}>
                     <View style={[styles.inputViewPage2, { flex: 0.28 }]}>
-                        <View style={{ flexDirection: "row", width: '90%', justifyContent: "space-between", alignItems: "center" }}>
+                        <View style={{ flexDirection: "row", width: '90%', justifyContent: "space-between", alignItems: "center", marginTop: 10 }}>
                             <View style={[{ width: '25%', alignItems: "flex-start" }]}>
                                 <Text style={[styles.inputHeadingText, { paddingLeft: 15 }]}>AGE</Text>
-                                <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', }]}>
-                                <RNPickerSelect
+                                <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', marginTop: 10 }]}>
+                                    <RNPickerSelect
                                         placeholder={placeholderAge}
                                         items={age}
                                         onValueChange={value => {
@@ -365,14 +578,14 @@ const dispatch=useDispatch()
                                         ref={pickerRef}
                                         Icon={() => {
                                             return <Icon name="caret-down" size={20} color="gray" />;
-                                          }}
+                                        }}
                                     />
                                 </TouchableOpacity>
                             </View>
                             <View style={[{ width: '35%', alignItems: "center" }]}>
                                 <Text style={[styles.inputHeadingText, { paddingLeft: 25 }]}>SIZE</Text>
-                                <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', }]}>
-                                <RNPickerSelect
+                                <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', marginTop: 10 }]}>
+                                    <RNPickerSelect
                                         placeholder={placeholderSize}
                                         items={size}
                                         onValueChange={value => {
@@ -384,14 +597,14 @@ const dispatch=useDispatch()
                                         ref={pickerRef}
                                         Icon={() => {
                                             return <Icon name="caret-down" size={20} color="gray" />;
-                                          }}
+                                        }}
                                     />
                                 </TouchableOpacity>
                             </View>
                             <View style={[{ width: '40%', alignItems: "flex-end" }]}>
                                 <Text style={[styles.inputHeadingText, { paddingLeft: 28 }]}>ENERGY LEVEL</Text>
-                                <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', }]}>
-                                <RNPickerSelect
+                                <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', marginTop: 10 }]}>
+                                    <RNPickerSelect
                                         placeholder={placeholderLevels}
                                         items={levels}
                                         onValueChange={value => {
@@ -403,38 +616,36 @@ const dispatch=useDispatch()
                                         ref={pickerRef}
                                         Icon={() => {
                                             return <Icon name="caret-down" size={20} color="gray" />;
-                                          }}
+                                        }}
                                     />
                                 </TouchableOpacity>
                             </View>
-
                         </View>
 
                     </View>
-                    <View style={[styles.inputViewPage2, { flex: 0.30, marginTop: 10 }]}>
+                    <View style={[styles.inputViewPage2, { flex: 0.30, marginTop: 18 }]}>
                         <Text style={styles.inputHeadingText}>BREED</Text>
-                        <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', }]}>
-                                <RNPickerSelect
-                                        placeholder={placeholderBreed}
-                                        items={breed}
-                                        onValueChange={value => {
-                                            setFBreed(value)
-                                        }}
-                                        style={pickerSelectStyles}
-                                        value={FBREED}
-                                        useNativeAndroidPickerStyle={false}
-                                        ref={pickerRef}
-                                        Icon={() => {
-                                            return <Icon name="caret-down" size={20} color="gray" />;
-                                          }}
-                                    />
-                                </TouchableOpacity>
+                        <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', marginTop: 10 }]}>
+                            <RNPickerSelect
+                                placeholder={placeholderBreed}
+                                items={breed}
+                                onValueChange={value => {
+                                    setFBreed(value)
+                                }}
+                                style={pickerSelectStyles}
+                                value={FBREED}
+                                useNativeAndroidPickerStyle={false}
+                                ref={pickerRef}
+                                Icon={() => {
+                                    return <Icon name="caret-down" size={20} color="gray" />;
+                                }}
+                            />
+                        </TouchableOpacity>
                     </View>
-                    <View style={[styles.inputViewPage2, { flex: 0.42, }]}>
-                        <View style={{ width: '90%', justifyContent: "space-between", alignItems: "center" }}>
-
+                    <View style={[styles.inputViewPage2, { flex: 0.42, marginTop: 18, paddingBottom: 30 }]}>
+                        <View style={{ width: '90%', justifyContent: "space-between", alignItems: "center", }}>
                             <Text style={[styles.inputHeadingText, { paddingLeft: 15 }]}>INTERESTS</Text>
-                            <View style={{ flexDirection: "row" }}>
+                            <View style={{ flexDirection: "row", paddingBottom: 10, paddingTop: 10 }}>
                                 <View style={styles.circleView}>
                                     <TouchableOpacity
                                         onPress={() => setFFood(!FFOOD)}
@@ -492,128 +703,81 @@ const dispatch=useDispatch()
                         </View>
                     </View>
                 </View>
-            </>
+            </View>
         )
     }
 
-
-
-
-        return (
-            <>
-                            <StatusBar backgroundColor="#0090e6" barStyle="dark-content" />
-                <ImageBackground 
-                  source={Images.Images.bg} 
+    return (
+        <View style={{ flex: 1 }}>
+            <Loader loading={isLoading} />
+            {/* <StatusBar backgroundColor="#0090e6" barStyle="dark-content" /> */}
+            <ImageBackground
+                source={Images.Images.bg}
                 resizeMode="cover"
-                    style={styles.appLogoView}>
+                style={styles.appLogoView}>
                 <View style={styles.headingView}>
-                <TouchableOpacity 
-                            style={[styles.headerLeftIcon]}
-                      
-                      onPress={()=>props.navigation.toggleDrawer()}>
-                      
-                <Image
-                            style={styles.headerLeftIcon}
+                    <TouchableOpacity
+                        style={[styles.headerLeftIcon]}
+                        onPress={() => props.navigation.toggleDrawer()}>
+                        <Image
+                            style={{
+                                height: 30,
+                                width: 30,
+                                tintColor: colors.white,
+                            }}
                             source={Images.Images.hamburgerMenu}
                         />
-                        </TouchableOpacity>
+                    </TouchableOpacity>
                     <Text style={[styles.headingText,]}>Profile Update</Text>
                 </View>
-                <Image
-                            resizeMode={"contain"}
-                            style={[{height:120,width:120}]}
-                            source={Images.Images.buddyUpLogo} />
-
-                    </ImageBackground>
-                
-                <View style={{ flex: 0.7, }}>
-                <ScrollView style={{flexGrow:1,marginVertical:20}}>
-                {MoreAboutBuddy()}
-
-                </ScrollView>
-</View>
-                {/* <View style={{ flex: 0.5, }}>
-                    <View style={styles.inputViewPage2}>
-                        <Text style={styles.inputHeadingText}>Name</Text>
-                        <TextInputField
-                            placeHolderText={"Tommy"}
-                            placeHolderTextColor={"black"}
+                <TouchableOpacity
+                    activeOpacity={.6}
+                    onPress={imagePicker}
+                    style={styles.pImageContainer}>
+                    {imageLoading && (
+                        <ActivityIndicator
+                            size="large"
+                            color={colors.black}
+                            style={{
+                                position: "absolute",
+                                top: 50,
+                                zIndex: 999
+                            }}
                         />
-                    </View>
-                </View>
- */}
-                <View style={styles.buttonView}>
-                    <TouchableOpacity
-                    onPress={()=>
-                       {
-                         if(BAGE==undefined&&BAGE==null){
-                            alert('Please select age.')
-                        }
-                        else if(name.trim().length==0){
-                            alert('Please enter name.')
-                        }
-                        else if(buddyName.trim().length==0){
-                            alert('Please enter buddy name.')
-                        }
-                        else if(BLEVELS==undefined&&BLEVELS==null){
-                            alert('Please select level.')
-                        }
-                        else if(BSIZE==undefined&&BSIZE==null){
-                            alert('Please select size.')
-                        }
-                        else if(BBREED==undefined&&BBREED==null){
-                            alert('Please select breed.')
-                        }
-                        
-                        
-                        else if(FAGE==undefined&&FAGE==null){
-                            alert('Please select pereference age.')
-                        }
-                        else if(FLEVELS==undefined&&FLEVELS==null){
-                            alert('Please select pereference level.')
-                        }
-                        else if(FSIZE==undefined&&FSIZE==null){
-                            alert('Please select pereference size.')
-                        }
-                        else if(FBREED==undefined&&FBREED==null){
-                            alert('Please select pereferences breed.')
-                        }
-                           else{
-                        dispatch(updateAction(
-                       JSON.stringify( {
-                        "name":name,
-                        "buddy_name":buddyName,
-                            "age":BAGE,
-                            "size":BSIZE,
-                            "energyLevel":BLEVELS,
-                            "breed":BBREED,
-                            "interests":["feedbowl","ball","leash"],
-                            "pereferences":{
-                                "age":FAGE,
-                                "size":FSIZE,
-                                "energyLevel":FLEVELS,
-                                "breed":FBREED,
-                                "interests":["feedbowl","ball","leash"]
-                            }
-                        }),
-                        props.navigation
-                        
-                    ))}}}
-                        style={[styles.buttonPage2, { backgroundColor: colors.secondaryBlue }]}>
-                        <Text style={styles.buttonTextPage2}>Update Profile</Text>
-                    </TouchableOpacity>
-                    
-                    <TouchableOpacity
-                    onPress={()=>props.navigation.navigate('ChangePassword')}
-                        style={[styles.buttonPage2, { backgroundColor: colors.secondaryBlue }]}>
-                        <Text style={styles.buttonTextPage2}>Change Password</Text>
-                    </TouchableOpacity>
-                    
+                    )}
+                    <Image
+                        resizeMode={"contain"}
+                        style={[styles.pImage]}
+                        source={profileImage && image == "" ? { uri: profileImage } : (image != "" ? { uri: image.sourceURL } : Images.Images.buddyUpLogo)} />
+                </TouchableOpacity>
+            </ImageBackground>
 
-                </View>
-            </>
-        )
-    }
+            <ScrollView
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={{
+                    paddingBottom: height * .15
+                }}
+                style={{ flexGrow: 1, marginVertical: 20, }}>
+                {MoreAboutBuddy()}
+            </ScrollView>
+
+            <View style={styles.buttonView}>
+                <TouchableOpacity
+                    onPress={() => buttonHandler()}
+                    style={[styles.buttonPage2, { backgroundColor: colors.secondaryBlue }]}>
+                    <Text style={styles.buttonTextPage2}>Update Profile</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    onPress={() => props.navigation.navigate('ChangePassword')}
+                    style={[styles.buttonChangePwd, {}]}>
+                    <Text style={[styles.buttonTextPage2, { color: colors.darkBlue, textDecorationLine: "underline", fontSize: typography.FONT_SIZE_12 }]}>Change Password</Text>
+                </TouchableOpacity>
+
+            </View>
+        </View>
+    )
+}
 
 
 
@@ -621,23 +785,23 @@ const dispatch=useDispatch()
 
 const pickerSelectStyles = StyleSheet.create({
     inputIOS: {
-      fontSize: 16,
-      paddingVertical: 12,
-      paddingHorizontal: 10,
-      borderWidth: 1,
-      borderColor: 'gray',
-      borderRadius: 4,
-      color: 'black',
-      paddingRight: 30, // to ensure the text is never behind the icon
+        fontSize: 16,
+        //   paddingVertical: 12,
+        paddingHorizontal: 10,
+        //   borderWidth: 1,
+        //   borderColor: 'gray',
+        borderRadius: 4,
+        color: 'black',
+        paddingRight: 30, // to ensure the text is never behind the icon
     },
     inputAndroid: {
-      fontSize: 16,
-    //   paddingHorizontal: 10,
-      paddingVertical: 5,
-      color: 'black', // to ensure the text is never behind the icon
-      textAlign:"left",
-      alignItems:"center",
-      marginRight:10
+        fontSize: 16,
+        //   paddingHorizontal: 10,
+        paddingVertical: 5,
+        color: 'black', // to ensure the text is never behind the icon
+        textAlign: "left",
+        alignItems: "center",
+        marginRight: 10
     },
-    icon : {margin:20, paddingTop:10 }
-  });
+    icon: { margin: 20, paddingTop: 10 }
+});

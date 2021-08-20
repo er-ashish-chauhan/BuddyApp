@@ -9,6 +9,8 @@ import {
   Image,
   Text,
   Linking,
+  TouchableOpacity,
+  Alert,
 } from 'react-native';
 
 import {
@@ -17,34 +19,61 @@ import {
   DrawerItem,
 } from '@react-navigation/drawer';
 import { Images } from '../../Theme/AppImages';
+import { CommonActions, StackActions } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useDispatch } from 'react-redux';
+import { loginAction, logoutAction } from '../../store/actions';
+import { colors, fontNames, typography } from '../../Theme';
+import { height } from '../../Theme/responsiveStyles';
 
 const CustomSidebarMenu = (props) => {
   const BASE_PATH =
     'https://raw.githubusercontent.com/AboutReact/sampleresource/master/';
   const proileImage = 'react_logo.png';
-
+  const dispatch = useDispatch()
   return (
-    <SafeAreaView style={{flex: 1,paddingVertical:30}}>
+    <View style={{ flex: 1, }}>
       {/*Top Large Image */}
-      <Image
-        source={ Images.buddyUpLogo}
-        style={styles.sideMenuProfileIcon}
-      />
+      <View style={styles.imageContainer}>
+        <Image
+          resizeMode='contain'
+          source={Images.buddyUpLogo}
+          style={styles.sideMenuProfileIcon}
+        />
+      </View>
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
-       
-       </DrawerContentScrollView>
-      
-    </SafeAreaView>
+        <TouchableOpacity onPress={() => {
+          Alert.alert("Logout", "Are you sure you want to logout?", [{
+            text: "Cancel",
+            style: "cancel"
+          }, {
+            text: "Ok", onPress: () => dispatch(logoutAction(props.navigation))
+          }])
+        }} style={{ marginTop: 20, marginLeft: 20 }}>
+          <Text style={styles.text}>
+            Logout
+          </Text>
+        </TouchableOpacity>
+      </DrawerContentScrollView>
+
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  imageContainer: {
+    height: height * .27,
+    paddingTop: height * .08,
+    borderBottomWidth: .8,
+    borderBottomColor: "#ccc",
+    backgroundColor: colors.darkBlue,
+    alignItems: "center",
+  },
   sideMenuProfileIcon: {
-    resizeMode: 'center',
-    width: 140,
-    height: 140,
-    borderRadius: 140 / 2,
+    width: 120,
+    height: 120,
+    // borderRadius: 140 / 2,
     alignSelf: 'center',
   },
   iconStyle: {
@@ -56,7 +85,14 @@ const styles = StyleSheet.create({
     padding: 16,
     flexDirection: 'row',
     alignItems: 'center',
+
   },
+  text: {
+    fontSize: typography.FONT_SIZE_16,
+    color: colors.redColor,
+    fontWeight: "bold",
+    fontFamily: fontNames.boldFont
+  }
 });
 
 export default CustomSidebarMenu;

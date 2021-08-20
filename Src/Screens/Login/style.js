@@ -1,12 +1,13 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import {  moderateScale, scale, verticalScale } from 'react-native-size-matters';
-import { colors, fontNames , typography} from "../../Theme";
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import { colors, fontNames, typography } from "../../Theme";
 
 const width = Dimensions.get('screen').width
 
 const styles = StyleSheet.create({
     mainWrapper: {
         flex: 1,
+        paddingTop: 30,
         flexDirection: 'column',
         justifyContent: 'center',
         backgroundColor: "#ffffff"
@@ -108,8 +109,8 @@ const styles = StyleSheet.create({
         color: colors.white,
         fontSize: typography.FONT_SIZE_40,
         fontWeight: "bold",
-        alignSelf:"flex-start",
-        paddingLeft:25
+        alignSelf: "flex-start",
+        paddingLeft: 25
     },
     headingView: {
         flex: 0.17,
@@ -122,8 +123,9 @@ const styles = StyleSheet.create({
     },
     headingText: {
         fontSize: typography.FONT_SIZE_20,
+        fontFamily: fontNames.boldFont,
         color: colors.black,
-        fontWeight: "bold",
+        // fontWeight: "bold",
         marginTop: moderateScale(5),
     },
     dogIconViewpage2: {
@@ -133,26 +135,28 @@ const styles = StyleSheet.create({
     },
     iconStylePage2: {
         height: verticalScale(70),
-        width: scale(70),
-        marginTop:moderateScale(10)
+        width: scale(75),
+        marginTop: moderateScale(10)
     },
     inputHeadingText: {
+        fontFamily: fontNames.boldFont,
+        fontSize: typography.FONT_SIZE_13,
         alignSelf: "flex-start",
         paddingLeft: 35,
-        color: colors.secondaryBlue,
+        color: colors.darkBlue,
         marginBottom: 5,
     },
-    inputViewPage2:{ 
-        flex: 0.5, 
-        justifyContent:"center", 
-        alignItems:"center" , 
-        
+    inputViewPage2: {
+        flex: 0.5,
+        justifyContent: "center",
+        alignItems: "center",
+
     },
-    dropDownView:{
-        flex: 0.5, 
-        justifyContent:"center", 
-        alignItems:"flex-start",
-      width:'95%',borderWidth:2
+    dropDownView: {
+        flex: 0.5,
+        justifyContent: "center",
+        alignItems: "flex-start",
+        width: '95%', borderWidth: 2
     },
     buttonPage2: {
         height: 50,
@@ -161,27 +165,28 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff',
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom:8
+        marginBottom: 8
     },
-    buttonTextPage2:{
-        color:colors.white, 
-        fontWeight:"bold", 
-        fontSize:15
+    buttonTextPage2: {
+        color: colors.white,
+        fontWeight: "bold",
+        fontSize: 15
     },
-    privacyPolicyView:{
-        paddingHorizontal:35, 
-        justifyContent:"center", 
-        alignItems:"center"
+    privacyPolicyView: {
+        paddingHorizontal: 35,
+        justifyContent: "center",
+        alignItems: "center"
     },
-    privacyPolicyText:{
-        fontSize:14, 
-        marginTop:10, 
-        textAlign:"center"
+    privacyPolicyText: {
+        fontSize: 15,
+        marginTop: 10,
+        textAlign: "center",
+        fontFamily: fontNames.regularFont
     },
-    buttonView:{ 
-        flex: 0.4, 
-        justifyContent:"center", 
-        alignItems:"center" 
+    buttonView: {
+        flex: 0.4,
+        justifyContent: "center",
+        alignItems: "center"
     },
     DropDownView: {
         height: 50,
@@ -191,18 +196,18 @@ const styles = StyleSheet.create({
     },
     inputViewDropDown: {
         height: 50,
-       
+
         borderRadius: 50 / 2,
         backgroundColor: '#ffffff',
         // alignItems: 'center',
         justifyContent: 'center',
         shadowColor: '#000',
-        padding:10,
+        padding: 10,
         shadowOffset: {
             width: 4,
             height: 4,
         },
-        borderColor:'gray',
+        borderColor: 'gray',
         shadowOpacity: 0.29,
         shadowRadius: 4.65,
         elevation: 7,
@@ -213,9 +218,9 @@ const styles = StyleSheet.create({
         color: colors.secondaryBlue,
         marginBottom: 5
     },
-    iconCircle:  {
+    iconCircle: {
         height: moderateScale(55),
-        width:moderateScale(55),
+        width: moderateScale(55),
         borderRadius: moderateScale(55) / 2,
         backgroundColor: '#ffffff',
         alignItems: 'center',
@@ -229,10 +234,10 @@ const styles = StyleSheet.create({
         shadowRadius: 4.65,
         elevation: 7,
     },
-    circleView:{ 
-        flex: 0.20, 
-        justifyContent: "center", 
-        alignItems: "center" 
+    circleView: {
+        flex: 0.20,
+        justifyContent: "center",
+        alignItems: "center"
     },
     activityIcon: {
         height: moderateScale(60),
@@ -246,11 +251,16 @@ const styles = StyleSheet.create({
         height: verticalScale(20),
         width: scale(20),
     },
-    view3:{ 
-        flexDirection: "row", 
-        width: '90%', 
-        justifyContent: "space-between", 
-        alignItems: "center", 
+    view3: {
+        flexDirection: "row",
+        width: '90%',
+        justifyContent: "space-between",
+        alignItems: "center",
+    },
+    forgotText: {
+        color: colors.darkBlue,
+        fontFamily: fontNames.boldFont,
+        fontSize: typography.FONT_SIZE_14
     }
 
 })

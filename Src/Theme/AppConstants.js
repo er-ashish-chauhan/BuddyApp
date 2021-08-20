@@ -1,232 +1,257 @@
 export const Constants = {
-    "dummyText" :"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it "
-}
+  dummyText:
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it ",
+};
+
+// base URL for application
+const baseURL = {
+  local: "http://13.234.31.22:3000",
+  staging: "http://13.234.31.22:3000",
+  production: "http://13.234.31.22:3000",
+};
+
+export const APP_BASE_URL = baseURL.local;
 
 export const appMessages = {
-    offline: "Your internet connection appears to be offline. Please try again.",
-    // 401 message
-    messageStatus401: "The user is not authorized to make the request.",
-    messageStatus500: "Something went wrong.",
-    resetLinkExpired: "Your password reset link has expired",
-    clickBelow: "Click below to generate a new one.",
-    wrongPage: "Sorry, we couldn't' find this page",
-    tryAgain: "Try again searching or go to",
-  };
+  offline: "Your internet connection appears to be offline. Please try again.",
+  // 401 message
+  messageStatus401: "The user is not authorized to make the request.",
+  messageStatus500: "Something went wrong.",
+  resetLinkExpired: "Your password reset link has expired",
+  clickBelow: "Click below to generate a new one.",
+  wrongPage: "Sorry, we couldn't' find this page",
+  tryAgain: "Try again searching or go to",
+};
 
+export const BREEDS = [
+  { label: "Affenpinscher", value: "Affenpinscher" },
+  { label: "Afghan", value: "Afghan" },
+  { label: "Airedale", value: "Airedale" },
+  { label: "Akita", value: "Akita" },
+  { label: "Alaskan", value: "Alaskan" },
+  { label: "American", value: "American" },
+  { label: "Anatolian", value: "Anatolian" },
+  { label: "Andalusian", value: "Andalusian" },
+  { label: "Australian", value: "Australian" },
+  { label: "Azawakh", value: "Azawakh" },
+  { label: "Barbet", value: "Barbet" },
+  { label: "Basenji", value: "Basenji" },
+  { label: "Basset", value: "Basset" },
+  { label: "Bavarian", value: "Bavarian" },
+  { label: "Beagle", value: "Beagle" },
+  { label: "Bearded", value: "Bearded" },
+  { label: "Beauceron", value: "Beauceron" },
+  { label: "Bedlington", value: "Bedlington" },
+  { label: "Belgian", value: "Belgian" },
+  { label: "Bergamasco", value: "Bergamasco" },
+  { label: "Berger", value: "Berger" },
+  { label: "Bernese", value: "Bernese" },
+  { label: "Bichon", value: "Bichon" },
+  { label: "Black", value: "Black" },
+  { label: "Bloodhound", value: "Bloodhound" },
+  { label: "Bluetick", value: "Bluetick" },
+  { label: "Boerboel", value: "Boerboel" },
+  { label: "Bohemian", value: "Bohemian" },
+  { label: "Bolognese", value: "Bolognese" },
+  { label: "Border", value: "Border" },
+  { label: "Borzoi", value: "Borzoi" },
+  { label: "Boston", value: "Boston" },
+  { label: "Boxer", value: "Boxer" },
+  { label: "Bracco", value: "Bracco" },
+  { label: "Briard", value: "Briard" },
+  { label: "Brittany", value: "Brittany" },
+  { label: "Broholmer", value: "Broholmer" },
+  { label: "Brussels", value: "Brussels" },
+  { label: "Bull", value: "Bull" },
+  { label: "Bullmastiff", value: "Bullmastiff" },
+  { label: "Cairn", value: "Cairn" },
+  { label: "Canaan", value: "Canaan" },
+  { label: "Canadian", value: "Canadian" },
+  { label: "Cane", value: "Cane" },
+  { label: "Cardigan", value: "Cardigan" },
+  { label: "Carolina", value: "Carolina" },
+  { label: "Catahoula", value: "Catahoula" },
+  { label: "Caucasian", value: "Caucasian" },
+  { label: "Cavalier", value: "Cavalier" },
+  { label: "Central", value: "Central" },
+  { label: "Cesky", value: "Cesky" },
+  { label: "Chesapeake", value: "Chesapeake" },
+  { label: "Chihuahua", value: "Chihuahua" },
+  { label: "Chinese", value: "Chinese" },
+  { label: "Chinook", value: "Chinook" },
+  { label: "Chow", value: "Chow" },
+  { label: "Cirneco", value: "Cirneco" },
+  { label: "Clumber", value: "Clumber" },
+  { label: "Coton", value: "Coton" },
+  { label: "Cotonese", value: "Cotonese" },
+  { label: "Curly", value: "Curly" },
+  { label: "Dachshund", value: "Dachshund" },
+  { label: "Dalmatian", value: "Dalmatian" },
+  { label: "Dandie", value: "Dandie" },
+  { label: "Danish-SwedishFarmdog", value: "Danish-SwedishFarmdog" },
+  { label: "Deutscher", value: "Deutscher" },
+  { label: "Dingo", value: "Dingo" },
+  { label: "Doberman", value: "Doberman" },
+  { label: "Dogo", value: "Dogo" },
+  { label: "Dogue", value: "Dogue" },
+  { label: "Drentsche", value: "Drentsche" },
+  { label: "Drever", value: "Drever" },
+  { label: "Dutch", value: "Dutch" },
+  { label: "English", value: "English" },
+  { label: "Eurasier", value: "Eurasier" },
+  { label: "Finnish", value: "Finnish" },
+  { label: "French", value: "French" },
+  { label: "German", value: "German" },
+  { label: "Giant", value: "Giant" },
+  { label: "Golden", value: "Golden" },
+  { label: "Grand", value: "Grand" },
+  { label: "Great", value: "Great" },
+  { label: "Greenland", value: "Greenland" },
+  { label: "Greyhound", value: "Greyhound" },
+  { label: "Harrier", value: "Harrier" },
+  { label: "Havanese", value: "Havanese" },
+  { label: "Hokkaido", value: "Hokkaido" },
+  { label: "Ibizan", value: "Ibizan" },
+  { label: "Irish", value: "Irish" },
+  { label: "Italian", value: "Italian" },
+  { label: "Jack", value: "Jack" },
+  { label: "Jamthund", value: "Jamthund" },
+  { label: "Japanese", value: "Japanese" },
+  { label: "Keeshond", value: "Keeshond" },
+  { label: "Kerry", value: "Kerry" },
+  { label: "Komondor", value: "Komondor" },
+  { label: "Labrador", value: "Labrador" },
+  { label: "Lagotto", value: "Lagotto" },
+  { label: "Lakeland", value: "Lakeland" },
+  { label: "Lancashire", value: "Lancashire" },
+  { label: "Lhasa", value: "Lhasa" },
+  { label: "Lowchen", value: "Lowchen" },
+  { label: "Maltese", value: "Maltese" },
+  { label: "Miniature", value: "Miniature" },
+  { label: "Neapolitan", value: "Neapolitan" },
+  { label: "Newfoundland", value: "Newfoundland" },
+  { label: "Norfolk", value: "Norfolk" },
+  { label: "Norwefian", value: "Norwefian" },
+  { label: "Norwegian", value: "Norwegian" },
+  { label: "Norwich", value: "Norwich" },
+  { label: "Nova", value: "Nova" },
+  { label: "Old", value: "Old" },
+  { label: "Otterhound", value: "Otterhound" },
+  { label: "Papillon", value: "Papillon" },
+  { label: "Parson", value: "Parson" },
+  { label: "Patagonian", value: "Patagonian" },
+  { label: "Patterdale", value: "Patterdale" },
+  { label: "Pekingese", value: "Pekingese" },
+  { label: "Pembroke", value: "Pembroke" },
+  { label: "Petit", value: "Petit" },
+  { label: "Pharaoh", value: "Pharaoh" },
+  { label: "Plott", value: "Plott" },
+  { label: "Pointer", value: "Pointer" },
+  { label: "Polish", value: "Polish" },
+  { label: "Pomeranian", value: "Pomeranian" },
+  { label: "Poodle", value: "Poodle" },
+  { label: "Portuguese", value: "Portuguese" },
+  { label: "Pug", value: "Pug" },
+  { label: "Puli", value: "Puli" },
+  { label: "Pumi", value: "Pumi" },
+  { label: "Pyrenean", value: "Pyrenean" },
+  { label: "Rat", value: "Rat" },
+  { label: "Redbone", value: "Redbone" },
+  { label: "Rhodesian", value: "Rhodesian" },
+  { label: "Rottweiler", value: "Rottweiler" },
+  { label: "Saint", value: "Saint" },
+  { label: "Saluki", value: "Saluki" },
+  { label: "Samoyed", value: "Samoyed" },
+  { label: "Schipperke", value: "Schipperke" },
+  { label: "Scottish", value: "Scottish" },
+  { label: "Sealyham", value: "Sealyham" },
+  { label: "Shar", value: "Shar" },
+  { label: "Shetland", value: "Shetland" },
+  { label: "Shiba", value: "Shiba" },
+  { label: "Shih", value: "Shih" },
+  { label: "Siberian", value: "Siberian" },
+  { label: "Silky", value: "Silky" },
+  { label: "Skye", value: "Skye" },
+  { label: "Sloughi", value: "Sloughi" },
+  { label: "Smooth", value: "Smooth" },
+  { label: "Soft", value: "Soft" },
+  { label: "Spanish", value: "Spanish" },
+  { label: "Staffordshire", value: "Staffordshire" },
+  { label: "Standard", value: "Standard" },
+  { label: "Sussex", value: "Sussex" },
+  { label: "Swedish", value: "Swedish" },
+  { label: "Thai", value: "Thai" },
+  { label: "Tibetan", value: "Tibetan" },
+  { label: "Treeing", value: "Treeing" },
+  { label: "Toy", value: "Toy" },
+  { label: "Vizsla", value: "Vizsla" },
+  { label: "Weimaraner", value: "Weimaraner" },
+  { label: "West", value: "West" },
+  { label: "Welsh", value: "Welsh" },
+  { label: "Whippet", value: "Whippet" },
+  { label: "Wire", value: "Wire" },
+  { label: "Wirehaired", value: "Wirehaired" },
+  { label: "Xoloitzcuintli", value: "Xoloitzcuintli" },
+  { label: "Yorkshire", value: "Yorkshire" },
+];
 export const apiConstants = {
-    // Clear state
-    CLEAR_STATE: "CLEAR_STATE",
-    HANDLE_SIDEBAR_NAVIGATION_STATE: "HANDLE_SIDEBAR_NAVIGATION_STATE",
-    HANDLE_SIDEBAR_DRAWER_TOGGLE_STATE: "HANDLE_SIDEBAR_DRAWER_TOGGLE_STATE",
-  
-    // ************ AUTHENTICATION ************
-    // Authentications types
-    API_AUTHENTICATION_FAILED: "API_AUTHENTICATION_FAILED",
-    API_AUTHENTICATION_ERROR: "API_AUTHENTICATION_ERROR",
-  
-    // Login
-    API_LOGIN_LOAD: "API_LOGIN_LOAD",
-    API_LOGIN_SUCCESS: "API_LOGIN_SUCCESS",
-  
-    API_SIGNUP_LOAD: "API_SIGNUP_LOAD",
-    API_SIGNUP_SUCCESS: "API_SIGNUP_SUCCESS",
-  
-    // Forgot Password
-    API_FORGOT_PASSWORD_LOAD: "API_FORGOT_PASSWORD_LOAD",
-    API_FORGOT_PASSWORD_SUCCESS: "API_FORGOT_PASSWORD_SUCCESS",
-  
-    // Reset Password
-    API_RESET_PASSWORD_LOAD: "API_RESET_PASSWORD_LOAD",
-    API_RESET_PASSWORD_SUCCESS: "API_RESET_PASSWORD_SUCCESS",
-  
-    // Reset Password
-    API_CHECK_RESET_PASSWORD_LOAD: "API_CHECK_RESET_PASSWORD_LOAD",
-    API_CHECK_RESET_PASSWORD_SUCCESS: "API_CHECK_RESET_PASSWORD_SUCCESS",
-  
-    // ************ USER MANAGEMENT ************
-    // User Management
-    API_USER_MANAGEMENT_FAILED: "API_USER_MANAGEMENT_FAILED",
-    API_USER_MANAGEMENT_ERROR: "API_USER_MANAGEMENT_ERROR",
-  
-    //Get User List
-    API_GET_USER_LIST_LOAD: "API_GET_USER_LIST_LOAD",
-    API_GET_USER_LIST_SUCCESS: "API_GET_USER_LIST_SUCCESS",
-  
-    //Get User Details
-    API_GET_USER_DETAILS_LOAD: "API_GET_USER_DETAILS_LOAD",
-    API_GET_USER_DETAILS_SUCCESS: "API_GET_USER_DETAILS_SUCCESS",
-  
-    //Edit User Details
-    API_EDIT_USER_DETAILS_LOAD: "API_EDIT_USER_DETAILS_LOAD",
-    API_EDIT_USER_DETAILS_SUCCESS: "API_EDIT_USER_DETAILS_SUCCESS",
-  
-    //Block User
-    API_BLOCK_USER_LOAD: "API_BLOCK_USER_LOAD",
-    API_BLOCK_USER_SUCCESS: "API_BLOCK_USER_SUCCESS",
-  
-    // ************ TERMINAL AREA MANAGEMENT ************
-    // Terminal Area Management Fail
-    API_TERMINAL_AREA_MANAGEMENT_FAILED: "API_TERMINAL_AREA_MANAGEMENT_FAILED",
-    API_TERMINAL_AREA_MANAGEMENT_ERROR: "API_TERMINAL_AREA_MANAGEMENT_ERROR",
-  
-    //Get Terminal Area List
-    API_GET_TERMINAL_AREA_LIST_LOAD: "API_GET_TERMINAL_AREA_LIST_LOAD",
-    API_GET_TERMINAL_AREA_LIST_SUCCESS: "API_GET_TERMINAL_AREA_LIST_SUCCESS",
-  
-    //Get Terminal Area Details
-    API_GET_TERMINAL_AREA_DETAILS_LOAD: "API_GET_TERMINAL_AREA_DETAILS_LOAD",
-    API_GET_TERMINAL_AREA_DETAILS_SUCCESS:
-      "API_GET_TERMINAL_AREA_DETAILS_SUCCESS",
-  
-    //Add Terminal Area
-    API_ADD_TERMINAL_AREA_LOAD: "API_ADD_TERMINAL_AREA_LOAD",
-    API_ADD_TERMINAL_AREA_SUCCESS: "API_ADD_TERMINAL_AREA_SUCCESS",
-  
-    //Edit Terminal Area
-    API_EDIT_TERMINAL_AREA_LOAD: "API_EDIT_TERMINAL_AREA_LOAD",
-    API_EDIT_TERMINAL_AREA_SUCCESS: "API_EDIT_TERMINAL_AREA_SUCCESS",
-  
-    //Delete Terminal Area
-    API_DELETE_TERMINAL_AREA_LOAD: "API_DELETE_TERMINAL_AREA_LOAD",
-    API_DELETE_TERMINAL_AREA_SUCCESS: "API_DELETE_TERMINAL_AREA_SUCCESS",
-  
-    // ************ TERMINAL MANAGEMENT ************
-  
-    // Terminal Management Fail
-    API_TERMINAL_MANAGEMENT_FAILED: "API_TERMINAL_MANAGEMENT_FAILED",
-    API_TERMINAL_MANAGEMENT_ERROR: "API_TERMINAL_MANAGEMENT_ERROR",
-  
-    //Get Teminal List
-    API_GET_TERMINAL_LIST_LOAD: "API_GET_TERMINAL_LIST_LOAD",
-    API_GET_TERMINAL_LIST_SUCCESS: "API_GET_TERMINAL_LIST_SUCCESS",
-  
-    //Add Teminal
-    API_ADD_TERMINAL_LOAD: "API_ADD_TERMINAL_LOAD",
-    API_ADD_TERMINAL_SUCCESS: "API_ADD_TERMINAL_SUCCESS",
-  
-    //Get Teminal Details
-    API_GET_TERMINAL_DETAILS_LOAD: "API_GET_TERMINAL_DETAILS_LOAD",
-    API_GET_TERMINAL_DETAILS_SUCCESS: "API_GET_TERMINAL_DETAILS_SUCCESS",
-  
-    //Edit Teminal
-    API_EDIT_TERMINAL_LOAD: "API_EDIT_TERMINAL_LOAD",
-    API_EDIT_TERMINAL_SUCCESS: "API_EDIT_TERMINAL_SUCCESS",
-  
-    //Delete Teminal
-    API_DELETE_TERMINAL_LOAD: "API_DELETE_TERMINAL_LOAD",
-    API_DELETE_TERMINAL_SUCCESS: "API_DELETE_TERMINAL_SUCCESS",
-  
-    // ************ IMPORT / EXPORT FILE************
-  
-    //Import Teminal
-    API_IMPORT_FILE_LOAD: "API_IMPORT_FILE_LOAD",
-    API_IMPORT_FILE_SUCCESS: "API_IMPORT_FILE_SUCCESS",
-  
-    //Export Terminal files
-    API_EXPORT_FILE_LOAD: "API_EXPORT_FILE_LOAD",
-    API_EXPORT_FILE_SUCCESS: "API_EXPORT_FILE_SUCCESS",
-  
-    // ************ REPORT POST MANAGEMENT ************
-  
-    // Report Post Fail
-    API_REPORT_POST_FAILED: "API_REPORT_POST_FAILED",
-    API_REPORT_POST_ERROR: "API_REPORT_POST_ERROR",
-  
-    //Get Report Post List
-    API_GET_REPORT_POST_LIST_LOAD: "API_GET_REPORT_POST_LIST_LOAD",
-    API_GET_REPORT_POST_LIST_SUCCESS: "API_GET_REPORT_POST_LIST_SUCCESS",
-  
-    //Get Report Post Details
-    API_GET_REPORT_POST_DETAILS_LOAD: "API_GET_REPORT_POST_DETAILS_LOAD",
-    API_GET_REPORT_POST_DETAILS_SUCCESS: "API_GET_REPORT_POST_DETAILS_SUCCESS",
-  
-    //Delete Report Post
-    API_DELETE_REPORT_POST_LOAD: "API_DELETE_REPORT_POST_LOAD",
-    API_DELETE_REPORT_POST_SUCCESS: "API_DELETE_REPORT_POST_SUCCESS",
-  
-    //Revoke Report Post
-    API_REVOKE_REPORT_POST_LOAD: "API_REVOKE_REPORT_POST_LOAD",
-    API_REVOKE_REPORT_POST_SUCCESS: "API_REVOKE_REPORT_POST_SUCCESS",
-  
-    // ************ TERMINAL REPORT POST MANAGEMENT ************
-  
-    // Terminal Report Post Fail
-    API_TERMINAL_REPORT_POST_FAILED: "API_TERMINAL_REPORT_POST_FAILED",
-    API_TERMINAL_REPORT_POST_ERROR: "API_TERMINAL_REPORT_POST_ERROR",
-  
-    //Get Terminal Report Post List
-    API_GET_TERMINAL_REPORT_POST_LIST_LOAD:
-      "API_GET_TERMINAL_REPORT_POST_LIST_LOAD",
-    API_GET_TERMINAL_REPORT_POST_LIST_SUCCESS:
-      "API_GET_TERMINAL_REPORT_POST_LIST_SUCCESS",
-  
-    //Get Terminal Report Post Details
-    API_GET_TERMINAL_REPORT_POST_DETAILS_LOAD:
-      "API_GET_TERMINAL_REPORT_POST_DETAILS_LOAD",
-    API_GET_TERMINAL_REPORT_POST_DETAILS_SUCCESS:
-      "API_GET_TERMINAL_REPORT_POST_DETAILS_SUCCESS",
-  
-    //Delete Terminal Report Post
-    API_DELETE_TERMINAL_REPORT_POST_LOAD: "API_DELETE_TERMINAL_REPORT_POST_LOAD",
-    API_DELETE_TERMINAL_REPORT_POST_SUCCESS:
-      "API_DELETE_TERMINAL_REPORT_POST_SUCCESS",
-  
-    // ************ IMAGE MANAGEMENT ************
-  
-    // Image Fail
-    API_IMAGE_MANAGEMENT_FAILED: "API_IMAGE_MANAGEMENT_FAILED",
-    API_IMAGE_MANAGEMENT_ERROR: "API_IMAGE_MANAGEMENT_ERROR",
-  
-    //Get Image List
-    API_GET_IMAGE_LIST_LOAD: "API_GET_IMAGE_LIST_LOAD",
-    API_GET_IMAGE_LIST_SUCCESS: "API_GET_IMAGE_LIST_SUCCESS",
-  
-    //Get Image Details
-    API_ADD_IMAGE_LOAD: "API_ADD_IMAGE_LOAD",
-    API_ADD_IMAGE_SUCCESS: "API_ADD_IMAGE_SUCCESS",
-  
-    //Delete Image
-    API_DELETE_IMAGE_LOAD: "API_DELETE_IMAGE_LOAD",
-    API_DELETE_IMAGE_SUCCESS: "API_DELETE_IMAGE_SUCCESS",
-  
-    // ************ SAVE USER LOCATION ************
-  
-    // Terminal Report Post Fail
-    API_SAVED_USER_LOCATIONS_FAILED: "API_SAVED_USER_LOCATIONS_FAILED",
-    API_SAVED_USER_LOCATIONS_ERROR: "API_SAVED_USER_LOCATIONS_ERROR",
-  
-    //Get Terminal Report Post List
-    API_SAVED_USER_LOCATIONS_LOAD: "API_SAVED_USER_LOCATIONS_LOAD",
-    API_SAVED_USER_LOCATIONS_SUCCESS: "API_SAVED_USER_LOCATIONS_SUCCESS",
-  
-    // ************ TIMELINE DETAILS ************
-  
-    //Get Timeline Details
-    API_TIMELINE_DETAILS_LOAD: "API_TIMELINE_DETAILS_LOAD",
-    API_TIMELINE_DETAILS_SUCCESS: "API_TIMELINE_DETAILS_SUCCESS",
-  
-    // ************ GEOFENCING ************
-    // Geofencing Fail
-    API_GEOFENCING_FAILED: "API_GEOFENCING_FAILED",
-    API_GEOFENCING_ERROR: "API_GEOFENCING_ERROR",
-  
-    //Get Geofencing Details
-    API_POST_GEOFENCING_LOAD: "API_POST_GEOFENCING_LOAD",
-    API_POST_GEOFENCING_SUCCESS: "API_POST_GEOFENCING_SUCCESS",
-  
-    //radar management
-  
-    //radar management fail
-    API_RADAR_MANAGEMENT_FAILED: "API_RADAR_MANAGEMENT_FAILED",
-    API_RADAR_MANAGEMENT_ERROR: "API_RADAR_MANAGEMENT_ERROR",
-  
-    //get radar entry/exit list
-    API_RADAR_ENTRY_EXIT_LOAD: "API_RADAR_ENTRY_EXIT_LOAD",
-    API_RADAR_ENTRY_EXIT_SUCCESS: "API_RADAR_ENTRY_EXIT_SUCCESS",
-  
-    //get radar export list
-    API_RADAR_EXPORT_LOAD: "API_RADAR_EXPORT_LOAD",
-    API_RADAR_EXPORT_SUCCESS: "API_RADAR_EXPORT_SUCCESS",
-  };
+  // Clear state
+  CLEAR_STATE: "CLEAR_STATE",
+  HANDLE_SIDEBAR_NAVIGATION_STATE: "HANDLE_SIDEBAR_NAVIGATION_STATE",
+  HANDLE_SIDEBAR_DRAWER_TOGGLE_STATE: "HANDLE_SIDEBAR_DRAWER_TOGGLE_STATE",
 
- 
+  // ************ AUTHENTICATION ************
+  // Authentications types
+  API_AUTHENTICATION_FAILED: "API_AUTHENTICATION_FAILED",
+  API_AUTHENTICATION_ERROR: "API_AUTHENTICATION_ERROR",
+
+  // Login
+  API_LOGIN_LOAD: "API_LOGIN_LOAD",
+  API_LOGIN_SUCCESS: "API_LOGIN_SUCCESS",
+
+  //logout
+  API_LOGOUT_LOAD: "API_LOGOUT_LOAD",
+
+  API_SIGNUP_LOAD: "API_SIGNUP_LOAD",
+  API_SIGNUP_SUCCESS: "API_SIGNUP_SUCCESS",
+
+  // Forgot Password
+  API_FORGOT_PASSWORD_LOAD: "API_FORGOT_PASSWORD_LOAD",
+  API_FORGOT_PASSWORD_SUCCESS: "API_FORGOT_PASSWORD_SUCCESS",
+
+  // Reset Password
+  API_RESET_PASSWORD_LOAD: "API_RESET_PASSWORD_LOAD",
+  API_RESET_PASSWORD_SUCCESS: "API_RESET_PASSWORD_SUCCESS",
+
+  // Reset Password
+  API_CHECK_RESET_PASSWORD_LOAD: "API_CHECK_RESET_PASSWORD_LOAD",
+  API_CHECK_RESET_PASSWORD_SUCCESS: "API_CHECK_RESET_PASSWORD_SUCCESS",
+
+  // ************ USER MANAGEMENT ************
+  // User Management
+  API_USER_MANAGEMENT_FAILED: "API_USER_MANAGEMENT_FAILED",
+  API_USER_MANAGEMENT_ERROR: "API_USER_MANAGEMENT_ERROR",
+
+  //Get User List
+  API_GET_USER_LIST_LOAD: "API_GET_USER_LIST_LOAD",
+  API_GET_USER_LIST_SUCCESS: "API_GET_USER_LIST_SUCCESS",
+
+  API_GET_MATCH_LIST_LOAD: "API_GET_MATCH_LIST_LOAD",
+  API_GET_MATCH_LIST_SUCCESS: "API_GET_MATCH_LIST_SUCCESS",
+
+  //Get User Details
+  API_GET_USER_DETAILS_LOAD: "API_GET_USER_DETAILS_LOAD",
+  API_GET_USER_DETAILS_SUCCESS: "API_GET_USER_DETAILS_SUCCESS",
+
+  //Edit User Details
+  API_EDIT_USER_DETAILS_LOAD: "API_EDIT_USER_DETAILS_LOAD",
+  API_EDIT_USER_DETAILS_SUCCESS: "API_EDIT_USER_DETAILS_SUCCESS",
+
+  UPDATE_AVATAR: "UPDATE_AVATAR",
+  GET_USER_DETAILS: "GET_USER_DETAILS",
+  CHANGE_PWD: "CHANGE_PWD",
+
+  // Notifications
+  UPDATE_NOTIFICAIONS_COUNT: "UPDATE_NOTIFICAIONS_COUNT",
+  UPDATE_NOTIFICAIONS_COUNT_SUCCESS: "UPDATE_NOTIFICAIONS_COUNT_SUCCESS",
+};

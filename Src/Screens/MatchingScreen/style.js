@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
     },
     heading:{
+        marginTop:'10%',
         fontSize:typography.FONT_SIZE_40, 
         fontWeight:'bold', 
         color:colors.white, 

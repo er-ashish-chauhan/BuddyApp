@@ -2,7 +2,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 import {  moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import { colors, fontNames , typography} from "../../Theme";
 
-const width = Dimensions.get('screen').width
+const {width, height} = Dimensions.get("window")
 
 const styles = StyleSheet.create({
     mainWrapper: {
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         color: "black"
     },
     appLogoView: {
-        // flex: 0.15,
+        height: height * .3,
         backgroundColor: colors.primaryBlue,
         width: "100%",
         alignItems: "center",
@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
         paddingLeft:25
     },
     headingView: {
+        paddingTop:'20%',
         // flex: 0.17,
         flexDirection: "row",
         // backgroundColor: colors.white,

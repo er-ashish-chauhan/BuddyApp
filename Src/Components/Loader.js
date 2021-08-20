@@ -7,6 +7,7 @@ import {
     ActivityIndicator,
     Platform
 } from 'react-native';
+import { colors } from '../Theme';
 
 
 export const Loader = props => {
@@ -27,7 +28,7 @@ export const Loader = props => {
             <View style={styles.modalBackground}>
                 {/* {(Platform.OS === 'ios') ? <StatusBar backgroundColor={'#3493b7'} style={{ flex: 1, }}  barStyle="dark-content" /> : null} */}
                 <View style={styles.activityIndicatorWrapper}>
-                    <ActivityIndicator color={'blue'}
+                    <ActivityIndicator color={colors.darkBlue}
                         size={"large"}
                         animating={loading} />
                 </View>
@@ -54,4 +55,3 @@ const styles = StyleSheet.create({
     }
 });
 
- 

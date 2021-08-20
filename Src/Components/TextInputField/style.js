@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import { colors, fontNames , typography} from "../../Theme";
+import { colors, fontNames, typography } from "../../Theme";
 
 
 
@@ -22,19 +22,20 @@ const styles = StyleSheet.create({
             width: 4,
             height: 4,
         },
-        borderColor:'gray',
+        borderColor: 'gray',
         shadowOpacity: 0.29,
         shadowRadius: 4.65,
         elevation: 7,
     },
-    textInputStyle:{
-        width:"100%", 
-        paddingHorizontal:30,
-        fontSize:typography.FONT_SIZE_16,
+    textInputStyle: {
+        width: "100%",
+        paddingHorizontal: 30,
+        fontSize: typography.FONT_SIZE_16,
+        fontFamily: fontNames.regularFont
         // justifyContent:"center",
         // alignItems:"center"
     }
- 
+
 
 })
 export default styles;

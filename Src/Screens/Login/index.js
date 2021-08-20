@@ -12,7 +12,6 @@ import {
 } from 'react-native';
 import styles from './style';
 import TextInputField from "../../Components/TextInputField";
-import ViewPager from '@react-native-community/viewpager';
 import { Images, colors, typography } from "../../Theme";
 import RNPickerSelect from 'react-native-picker-select';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -20,8 +19,9 @@ import { loginAction, signupAction } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { authenticationReducer } from "../../store/reducers/authenticationReducer";
 import { Loader } from "../../Components/Loader";
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 const age = [
-    { label: '6 montsh', value: '6 months' },
+    { label: '6 month', value: '6 month' },
     { label: '1 year', value: '1year' },
     { label: '2 year', value: '2year' },
     { label: '3 year', value: '3year' },
@@ -32,7 +32,7 @@ const size = [
     { label: '15 lbs', value: '15lbs' },
     { label: '15-25 lbs', value: '1525lbs' },
     { label: '25-40 lbs', value: '2540lbs' },
-    { label: '4060lbs', value: '60lbs' },
+    { label: '40-60 lbs', value: '60lbs' },
 ]
 
 const levels = [
@@ -129,28 +129,30 @@ const Login = (props) => {
 
     const BuddyAppCommunity = () => {
         return (
-            <>
+            <View style={styles.mainWrapper}>
                 <View style={styles.headingView}>
-                    <Text style={[styles.headingText,]}>Login to the</Text>
-                    <Text style={[styles.headingText,]}>BuddyUp Community</Text>
+                    <Text style={[styles.headingText, { textAlign: "center" }]}>Login to the{"\n"}BuddyUp Community</Text>
                 </View>
                 <View style={styles.dogIconViewpage2}>
                     <Image
+                        resizeMode="cover"
                         style={styles.iconStylePage2}
                         source={Images.Images.buddyUpLogo}
                     />
                 </View>
-                <View style={{ flex: 0.33, }}>
+                <View style={{ flex: 0.28, }}>
                     <View style={styles.inputViewPage2}>
-                        <Text style={styles.inputHeadingText}>Email</Text>
+                        <Text style={styles.inputHeadingText}>EMAIL</Text>
                         <TextInputField
+                            keyboardType={'email-address'}
                             onChangeText={(v) => setEmail(v)}
                             placeHolderText={"Enter Email"}
                             placeHolderTextColor={"gray"}
+                            autoCapitalize="none"
                         />
                     </View>
                     <View style={styles.inputViewPage2}>
-                        <Text style={styles.inputHeadingText}>Password</Text>
+                        <Text style={styles.inputHeadingText}>PASSWORD</Text>
                         <TextInputField
                             onChangeText={(v) => setPassword(v)}
                             placeHolderText={"Enter password"}
@@ -158,50 +160,49 @@ const Login = (props) => {
                             password={true}
                         />
                     </View>
+                    {/* <TouchableOpacity
+                        activeOpacity={.6}
+                        onPress={() => props.navigation.navigate('ForgotPassword')}>
+                        <Text style={[styles.forgotText, { alignSelf: 'flex-end', marginTop: 5, marginRight: '10%' }]}>Forgot Password?</Text>
+                    </TouchableOpacity> */}
                 </View>
 
                 <View style={styles.buttonView}>
                     <TouchableOpacity onPress={() => {
-                        dispatch(loginAction(email, password, props.navigation))
+                        dispatch(loginAction(email.trim(), password, props.navigation))
                     }}
                         style={[styles.buttonPage2, { backgroundColor: colors.secondaryBlue }]}>
                         <Text style={styles.buttonTextPage2}>Login my account</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity
-                        style={[styles.buttonPage2, { backgroundColor: colors.primaryBlue }]}>
-                        <Text style={styles.buttonTextPage2}>Connect With Facebook</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={[styles.buttonPage2, { flexDirection: "row", backgroundColor: colors.black }]}>
-                        <Image
-                            style={styles.appleLogo}
-                            source={Images.Images.apple}
-                        />
-                        <Text style={styles.buttonTextPage2}>Sign in with Apple</Text>
-                    </TouchableOpacity>
-                    <View style={styles.privacyPolicyView}>
-                        <Text style={styles.privacyPolicyText} >By counting, you agree to our <Text style={{ color: colors.primaryBlue }}>Terms of Use</Text> and <Text style={{ color: colors.primaryBlue }}>Privacy Policy</Text></Text>
-                    </View>
 
+
+                    <View style={styles.privacyPolicyView}>
+                        <Text style={styles.privacyPolicyText} >By counting, you agree to our <Text style={{ color: colors.primaryBlue }}>Terms of Use</Text>{'\n'}and <Text style={{ color: colors.primaryBlue }}>Privacy Policy</Text></Text>
+                    </View>
+                    <View style={styles.privacyPolicyView}>
+                        <TouchableOpacity
+                            activeOpacity={.6}
+                            style={{}}
+                            onPress={() => props.navigation.goBack()}
+                        ><Text style={[styles.privacyPolicyText, {}]} >Don't have an account yet?<Text style={{ color: colors.primaryBlue, }}> SignUp</Text></Text></TouchableOpacity>
+                    </View>
                 </View>
-            </>
+            </View>
         )
     }
 
 
     return (
-
-        <SafeAreaView style={{ flex: 1, }}>
+        <KeyboardAwareScrollView
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={{
+                flex: 1
+            }}
+            style={{ flex: 1 }}>
             <Loader loading={stateData.isLoading} />
-            <StatusBar backgroundColor={index == 0 ? colors.primaryBlue : colors.white} barStyle="dark-content" />
-            <View style={styles.mainWrapper}>
-
-
-                {BuddyAppCommunity()}
-
-            </View>
-        </SafeAreaView>
-
+            {/* <StatusBar backgroundColor={index == 0 ? colors.primaryBlue : colors.white} barStyle="dark-content" /> */}
+            {BuddyAppCommunity()}
+        </KeyboardAwareScrollView >
     )
 }
 

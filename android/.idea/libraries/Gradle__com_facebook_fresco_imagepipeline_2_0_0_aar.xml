@@ -2,16 +2,17 @@
   <library name="Gradle: com.facebook.fresco:imagepipeline:2.0.0@aar">
     <ANNOTATIONS>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb8dd24e1c0b85bf021b9696f927d34d/jetified-imagepipeline-2.0.0/annotations.zip!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/827f6f2b10cb6ae2e5514527b27ac8dd/jetified-imagepipeline-2.0.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a2d9ecc4296218b1fbd86480dfcbf200/jetified-imagepipeline-2.0.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5546f0b94d803dd5e13dfcefdd5d1515/jetified-imagepipeline-2.0.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb8dd24e1c0b85bf021b9696f927d34d/jetified-imagepipeline-2.0.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb8dd24e1c0b85bf021b9696f927d34d/jetified-imagepipeline-2.0.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb8dd24e1c0b85bf021b9696f927d34d/jetified-imagepipeline-2.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/827f6f2b10cb6ae2e5514527b27ac8dd/jetified-imagepipeline-2.0.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/827f6f2b10cb6ae2e5514527b27ac8dd/jetified-imagepipeline-2.0.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/827f6f2b10cb6ae2e5514527b27ac8dd/jetified-imagepipeline-2.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a2d9ecc4296218b1fbd86480dfcbf200/jetified-imagepipeline-2.0.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a2d9ecc4296218b1fbd86480dfcbf200/jetified-imagepipeline-2.0.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a2d9ecc4296218b1fbd86480dfcbf200/jetified-imagepipeline-2.0.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.fresco/imagepipeline/2.0.0/442f3f8cfb3cf25b9d732bdc9909438d331e42ee/imagepipeline-2.0.0-javadoc.jar!/" />

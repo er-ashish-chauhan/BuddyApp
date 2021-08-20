@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import styles from './style';
 import { Images, colors, typography } from "../../Theme";
-import {Constants}from '../../Theme/AppConstants'
+import { Constants } from '../../Theme/AppConstants'
 import { Modalize } from 'react-native-modalize';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import SwiperCard from "../../Utils/SwiperCard";
@@ -245,7 +245,7 @@ const CustomSwiper = ({ navigation }) => {
                                         >
                                             <Icon name="menu" size={20} color="gray" />
                                         </TouchableOpacity>
-                                        
+
                                         <View style={{ flex: 1, width: "100%", paddingHorizontal: 15 }}>
 
                                             <View style={{ width: "100%", flex: 0.20, justifyContent: "center", alignItems: "center", flexDirection: "row" }}>

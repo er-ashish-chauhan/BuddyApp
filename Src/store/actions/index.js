@@ -1,12 +1,16 @@
 import {
+  logoutAction,
   loginAction,
   forgotPasswordAction,
   resetPasswordAction,
   checkResetPasswordAction,
-  signupAction
+  signupAction,
+  userExist
 } from "./authenticationActions";
 
 export {
+  logoutAction,
+  userExist,
   loginAction,
   signupAction,
   forgotPasswordAction,

@@ -1,185 +1,351 @@
 import react from "react";
-import React, { useState, useEffect, useRef, } from 'react';
-import { View, Text, SafeAreaView, StatusBar, Image, TextInput, TouchableOpacity, FlatList, ScrollView } from 'react-native';
-import styles from './style';
-import { colors, Images } from "../../Theme";
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { height } from "../../Theme/responsiveStyles";
+import React, { useState, useEffect, useRef } from "react";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  StatusBar,
+  Image,
+  TextInput,
+  TouchableOpacity,
+  FlatList,
+  ScrollView,
+  Dimensions,
+} from "react-native";
+import styles from "./style";
+import { colors, fontNames, Images } from "../../Theme";
+import Icon from "react-native-vector-icons/FontAwesome";
+// import { height } from "../../Theme/responsiveStyles";
 import { useDispatch, useSelector } from "react-redux";
-import { chatUserList } from "../../store/actions/chatUserAction";
+import { matchUserList } from "../../store/actions/chatUserAction";
+import firestore from "@react-native-firebase/firestore";
+import auth from "@react-native-firebase/auth";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { APP_BASE_URL } from "../../Theme/AppConstants";
+import { verticalScale } from "react-native-size-matters";
+
+const { width, height } = Dimensions.get("window");
 
 const expiringConnections = [
-    {
-       
-        dogImages: Images.Images.rubyAlford,
-    },
-    {
-        dogImages: Images.Images.Louie,
-        clock: Images.Images.clockRed
-    },
-    {
-        dogImages: Images.Images.pauline,
-        clock: Images.Images.clockBlue
-    },
-    {
-        dogImages: Images.Images.karsten,
-        clock: Images.Images.clockRed
-    },
-    {
-        dogImages: Images.Images.richard,
-        clock: Images.Images.clockBlue
-    },
-    {
-        dogImages: Images.Images.Louie,
-    }
-]
+  {
+    dogImages: Images.Images.rubyAlford,
+  },
+  {
+    dogImages: Images.Images.Louie,
+    clock: Images.Images.clockRed,
+  },
+  {
+    dogImages: Images.Images.pauline,
+    clock: Images.Images.clockBlue,
+  },
+  {
+    dogImages: Images.Images.karsten,
+    clock: Images.Images.clockRed,
+  },
+  {
+    dogImages: Images.Images.richard,
+    clock: Images.Images.clockBlue,
+  },
+  {
+    dogImages: Images.Images.Louie,
+  },
+];
 
 const chatList = [
-    {
-        id:1,
-        dogImages: Images.Images.waldo,
-        name: "Waldo",
-        message: "That's perfect. we will meet you"
-    },
-    {
-        id:2,
-        dogImages: Images.Images.richard,
-        name: "Waldo",
-        message: "That's perfect. we will meet you"
-    },
-    {
-        id:3,
-        dogImages: Images.Images.rubyAlford,
-        name: "Waldo",
-        message: "That's perfect. we will meet you"
-    },
-    {
-        id:4,
-        dogImages: Images.Images.waldo,
-        name: "Waldo",
-        message: "That's perfect. we will meet you"
-    },
-    {
-        id:5,
-        dogImages: Images.Images.waldo,
-        name: "Waldo",
-        message: "That's perfect. we will meet you"
-    },
-    {
-        id:6,
-        dogImages: Images.Images.waldo,
-        name: "Waldo",
-        message: "That's perfect. we will meet you"
-    }
-]
+  {
+    id: 1,
+    dogImages: Images.Images.waldo,
+    name: "Waldo",
+    message: "That's perfect. we will meet you",
+  },
+  {
+    id: 2,
+    dogImages: Images.Images.richard,
+    name: "Waldo",
+    message: "That's perfect. we will meet you",
+  },
+  {
+    id: 3,
+    dogImages: Images.Images.rubyAlford,
+    name: "Waldo",
+    message: "That's perfect. we will meet you",
+  },
+  {
+    id: 4,
+    dogImages: Images.Images.waldo,
+    name: "Waldo",
+    message: "That's perfect. we will meet you",
+  },
+  {
+    id: 5,
+    dogImages: Images.Images.waldo,
+    name: "Waldo",
+    message: "That's perfect. we will meet you",
+  },
+  {
+    id: 6,
+    dogImages: Images.Images.waldo,
+    name: "Waldo",
+    message: "That's perfect. we will meet you",
+  },
+];
 
 const AllUserChatList = ({ navigation }) => {
+  const dispatch = useDispatch();
+  const userState = useSelector((state) => state.authenticationReducer);
+  const [threads, setThreads] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-        const dispatch=useDispatch()
-        const userState=useSelector(state=>state.authenticationReducer)
-        useEffect(()=>{
-                dispatch(chatUserList(navigation))
-        },[])
+  // Store last messages
+  const [lastMessages, setLastMessages] = useState({});
 
-    const renderItem = ({ item }) => {
-        return (
-            <View style={{ justifyContent: "center", alignItems: "center" }}>
-                <Image
-                    resizeMode={"cover"}
-                    style={styles.imageStyle}
-                    source={item.dogImages}
-                />
-                {item.clock && <Image
-                    resizeMode={"cover"}
-                    style={{ height: 30, width: 30, right: 0, position: "absolute", bottom: 5 }}
-                    source={item.clock}
-                />}
-            </View>
-        )
-    }
+  useEffect(async () => {
+    // const querySanp = await firestore().collection('users').where('uid', '!=', user.uid).get()
+    // const allusers = querySanp.docs.map(docSnap => docSnap.data());
+    // console.log(JSON.stringify(
+    //     allusers, null, 1
+    // ), "don")
+    // return () => unsubscribe()
 
-    const renderListItem = ({ item }) => {
-        return (
-            <TouchableOpacity 
-            onPress={() => navigation.navigate("Chat")}
-            // onPress={() => navigation.navigate('Chat', { thread: item })}
-            style={{ flexDirection: "row",marginTop:10, justifyContent: "center", alignItems: "center" }}>
-                <View style={{ flex: 0.3,  }}>
-                    <Image
-                        resizeMode={"cover"}
-                        style={styles.listImageStyle}
-                        source={item.profile?item.profile:Images.Images.rubyAlford}
-                    />
-                    {/* <Icon name="chevron-left" height={25} width={25}/> */}
-                </View>
-                <View style={{ flex: 0.7,justifyContent:"center"}}>
-                    <Text style={[styles.listName,]}>{item.name}</Text>
-                    <Text style={[styles.message]}>{item.message?item.message:""}</Text>
-                </View>
-            </TouchableOpacity>
-        )
+    const res = await AsyncStorage.getItem("detail");
+    let userData = JSON.parse(res);
+
+    // Get Last Messages
+    const unsubscribeArr = [];
+    userState.matchesList?.forEach((obj) => {
+      const docid =
+        obj._id > userData?._id
+          ? userData?._id + "-" + obj._id
+          : obj._id + "-" + userData?._id;
+
+      const messageRef = firestore()
+        .collection("Chats")
+        .doc(docid)
+        .collection("message")
+        .orderBy("createdAt", "desc")
+        .limit(1);
+
+      const unsub = messageRef.onSnapshot((querySnap) => {
+        if (querySnap.size) {
+          let data = querySnap.docs[0].data();
+          console.log("..doc", data);
+          lastMessages[obj._id] = data.messages[0].text;
+          setLastMessages({ ...lastMessages });
+          console.log("...lastMessages", lastMessages);
+        }
+        unsubscribeArr.push(unsub);
+      });
+    });
+
+    return () => {
+      unsubscribeArr?.forEach((func) => {
+        if (func) {
+          func();
+        }
+      });
+    };
+  }, [userState.matchesList]);
+
+  useEffect(() => {
+    navigation.addListener("focus", () => {
+      dispatch(matchUserList(navigation));
+    });
+  }, []);
+
+  const renderItem = ({ item }) => {
+    if (lastMessages[item._id]) {
+      return null;
     }
 
     return (
-        <>
+      <TouchableOpacity
+        onPress={() => {
+          AsyncStorage.getItem("detail").then((res) => {
+            console.log("[ress", res);
+            let parseData = JSON.parse(res);
 
-            <SafeAreaView style={{ flex: 1, }}>
-                <StatusBar backgroundColor={colors.white} barStyle="dark-content" />
-                <View style={styles.mainWrapper}>
+            //   console.log(parseData,props);
+            setTimeout(() => {
+              navigation.navigate("Chat", { item: item, userId: parseData });
+            }, 2000);
+          });
+        }}
+        // onPress={() => navigation.navigate('Chat', { thread: item })}
+        style={{
+          marginTop: 10,
+          justifyContent: "center",
+          alignItems: "center",
+          marginRight: 10,
+        }}
+      >
+        <View
+          style={[
+            styles.imageContainer,
+            {
+              borderColor: item.color,
+              borderEndWidth: item.percent > 70 ? 5 : 0,
+            },
+          ]}
+        >
+          <Image
+            resizeMode="cover"
+            style={styles.listImageStyle}
+            source={
+              item.avatar
+                ? { uri: APP_BASE_URL + "/uploads/" + item.avatar }
+                : Images.Images.rubyAlford
+            }
+          />
+          <Image
+            resizeMode="cover"
+            style={styles.statusImg}
+            source={{ uri: APP_BASE_URL + "/uploads/" + item.icon }}
+          />
+        </View>
+        {/* <View >
+          <Text style={[styles.listName,]}>{item.name}</Text>
+      </View> */}
+      </TouchableOpacity>
+    );
+  };
 
-                    <View style={styles.header}>
-                        {/* <Image
-                            style={styles.headerLeftIcon}
-                            source={Images.Images.hamburgerMenu}
-                            // source={require("../../Assets/Image/leftIcon.png")}
-                        /> */}
-                        <TouchableOpacity 
-                        onPress={() => navigation.goBack()}
-                        style={styles.headerLeftIcon}>
-                        <Icon name="chevron-left" size={25} color="white" />
-                        </TouchableOpacity>
-                        <Text style={[styles.headerTitle, { fontWeight: "bold" }]}>Buddy</Text>
-                        <Text style={[styles.headerTitle, { fontWeight: "normal" }]}>Up</Text>
-                        {/* <Icon name="angle-left" height={25} width={25} color={'red'} /> */}
+  const renderListItem = ({ item }) => {
+    if (!lastMessages[item._id]) {
+      return null;
+    }
 
-                    </View>
+    // console.log(item)
+    return (
+      <TouchableOpacity
+        onPress={() => {
+          AsyncStorage.getItem("detail").then((res) => {
+            console.log("[ress", res);
+            let parseData = JSON.parse(res);
+            setTimeout(() => {
+              navigation.navigate("Chat", { item: item, userId: parseData });
+            }, 2000);
+          });
+        }}
+        // onPress={() => navigation.navigate('Chat', { thread: item })}
+        style={{
+          flexDirection: "row",
+          marginTop: 10,
+          justifyContent: "flex-start",
+          alignItems: "center",
+          marginBottom: 5,
+        }}
+      >
+        <View style={{ width: width * 0.15 }}>
+          <Image
+            resizeMode={"cover"}
+            style={styles.listImageStyle}
+            source={item.profile ? item.profile : Images.Images.rubyAlford}
+          />
+          {/* <Icon name="chevron-left" height={25} width={25}/> */}
+        </View>
+        <View style={{ alignSelf: "flex-start", marginLeft: 15 }}>
+          <Text style={[styles.listName]}>{item.name}</Text>
+          {/* <Text style={[styles.message]}>{item.message.slice(0, 90)}</Text> */}
+          <View style={{ width: "92%" }}>
+            <Text style={[styles.message]}>
+              {lastMessages[item._id] ?? "Hi, Nice to meet you"}
+            </Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+    );
+  };
 
-                    <View style={styles.expiringView}>
-                        {/* <FlatList
-                            bounces={true}
-                            data={expiringConnections}
-                            // initialNumToRender={20}
-                            keyExtractor={(item, index) => index.toString()}
-                            showsVerticalScrollIndicator={false}
-                            keyboardShouldPersistTaps={'handled'}
-                            extraData={this.state.chatList}
-                            renderItem={({ item }) => this.userList(item)}
-                        /> */}
-                        <Text style={[styles.listHeading,]}>Expiring Connection</Text>
-                        <FlatList
-                            data={expiringConnections}
-                            renderItem={renderItem}
-                            keyExtractor={(item, index) => index.toString()}
-                            horizontal={true}
-                            showsHorizontalScrollIndicator={false}
-                        />
-                    </View>
-                    <View style={styles.listView}>
+  const emptyList = () => {
+    return (
+      <View
+        style={{
+          height: height * 0.5,
+          width: "100%",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Text>No chat list found</Text>
+      </View>
+    );
+  };
+  const emptyList2 = () => {
+    return (
+      <View
+        style={{
+          height: "100%",
+          width: "100%",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Text>No chat list found</Text>
+      </View>
+    );
+  };
+  return (
+    <View style={{ height }}>
+      <View style={styles.mainWrapper}>
+        <View style={[styles.header]}>
+          <View
+            style={{
+              flexDirection: "row",
+              flex: 1,
+              justifyContent: "space-between",
+            }}
+          >
+            <TouchableOpacity
+              onPress={() => navigation.toggleDrawer()}
+              style={styles.headerLeftIcon}
+            >
+              <Image
+                style={styles.headerLeftIcon}
+                source={Images.Images.hamburgerMenu}
+              />
+            </TouchableOpacity>
+            <Text
+              style={[styles.headerTitle, { fontFamily: fontNames.boldFont }]}
+            >
+              Buddy
+              <Text style={[styles.headerTitle, { fontWeight: "normal" }]}>
+                Up
+              </Text>
+            </Text>
+            <View />
+          </View>
+        </View>
+        <View style={styles.contentContainer}>
+          <View style={styles.expiringView}>
+            <Text style={[styles.listHeading]}>Expiring Connections</Text>
+            <FlatList
+              ListEmptyComponent={emptyList2}
+              data={userState.matchesList}
+              renderItem={renderItem}
+              keyExtractor={(item, index) => String(item._id)}
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{
+                marginBottom: 10,
+              }}
+            />
+          </View>
+          <View style={styles.listView}>
+            <Text style={[styles.listHeading]}>Conversations</Text>
+            <FlatList
+              contentContainerStyle={{ paddingBottom: 60 }}
+              showsVerticalScrollIndicator={false}
+              data={userState.matchesList}
+              ListEmptyComponent={emptyList}
+              renderItem={renderListItem}
+              keyExtractor={(item, index) => index.toString()}
+              showsHorizontalScrollIndicator={false}
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+  );
+};
 
-                        <Text style={[styles.listHeading,]}>Conversations</Text>
-                        <FlatList
-                            data={userState.userList}
-                            renderItem={renderListItem}
-                            keyExtractor={(item, index) => index.toString()}
-                            showsHorizontalScrollIndicator={false}
-                        />
-                    </View>
-
-                </View>
-            </SafeAreaView>
-        </>
-
-    )
-}
-
-export default AllUserChatList
+export default AllUserChatList;

@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import {  moderateScale, scale, verticalScale } from 'react-native-size-matters';
-import { colors, fontNames , typography} from "../../Theme";
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import { colors, fontNames, typography } from "../../Theme";
 
 const width = Dimensions.get('screen').width
 
@@ -57,12 +57,14 @@ const styles = StyleSheet.create({
         color: "black"
     },
     appLogoView: {
-        flex: 0.25,
+        // flex: 0.25,
+        paddingTop: 58,
         backgroundColor: colors.primaryBlue,
         width: "100%",
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
+        paddingBottom: 20
     },
     activeTab: {
         width: moderateScale(10),
@@ -108,23 +110,25 @@ const styles = StyleSheet.create({
         color: colors.white,
         fontSize: typography.FONT_SIZE_40,
         fontWeight: "bold",
-        alignSelf:"flex-start",
-        paddingLeft:25
+        alignSelf: "flex-start",
+        paddingLeft: 25
     },
     headingView: {
-        // flex: 0.17,
+        // paddingTop: 10,
         flexDirection: "row",
-        // backgroundColor: colors.white,
         width: "100%",
         alignItems: "center",
         justifyContent: "center",
-        // flexDirection: "column",
     },
     headingText: {
         fontSize: typography.FONT_SIZE_20,
         color: colors.black,
         fontWeight: "bold",
-        marginTop: moderateScale(5),
+        // paddingTop: moderateScale(10),
+    },
+    pImageContainer: {
+        marginTop: 30,
+        alignItems: "center",
     },
     dogIconViewpage2: {
         flex: 0.2,
@@ -134,25 +138,28 @@ const styles = StyleSheet.create({
     iconStylePage2: {
         height: verticalScale(70),
         width: scale(70),
-        marginTop:moderateScale(10)
+        marginTop: moderateScale(10)
     },
     inputHeadingText: {
         alignSelf: "flex-start",
-        paddingLeft: 35,
-        color: colors.secondaryBlue,
+        paddingLeft: 25,
+        paddingBottom: 5,
+        color: colors.darkBlue,
+        fontWeight: "600",
         marginBottom: 5,
+        fontSize: typography.FONT_SIZE_13
     },
-    inputViewPage2:{ 
-        flex: 0.5, 
-        justifyContent:"center", 
-        alignItems:"center" , 
-        
+    inputViewPage2: {
+        flex: 0.5,
+        justifyContent: "center",
+        alignItems: "center",
+
     },
-    dropDownView:{
-        flex: 0.5, 
-        justifyContent:"center", 
-        alignItems:"flex-start",
-      width:'95%',borderWidth:2
+    dropDownView: {
+        flex: 0.5,
+        justifyContent: "center",
+        alignItems: "flex-start",
+        width: '95%', borderWidth: 2
     },
     buttonPage2: {
         height: 50,
@@ -161,27 +168,29 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff',
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom:8
+        marginBottom: 8
     },
-    buttonTextPage2:{
-        color:colors.white, 
-        fontWeight:"bold", 
-        fontSize:15
+    buttonTextPage2: {
+        color: colors.white,
+        fontWeight: "bold",
+        fontSize: typography.FONT_SIZE_16
     },
-    privacyPolicyView:{
-        paddingHorizontal:35, 
-        justifyContent:"center", 
-        alignItems:"center"
+    privacyPolicyView: {
+        paddingHorizontal: 35,
+        justifyContent: "center",
+        alignItems: "center"
     },
-    privacyPolicyText:{
-        fontSize:14, 
-        marginTop:10, 
-        textAlign:"center"
+    privacyPolicyText: {
+        fontSize: 14,
+        marginTop: 10,
+        textAlign: "center"
     },
-    buttonView:{ 
+    buttonView: {
         // flex: 0.1, 
-        justifyContent:"center", 
-        alignItems:"center" 
+        marginTop: 50,
+        marginHorizontal: 10,
+        justifyContent: "center",
+        alignItems: "center"
     },
     DropDownView: {
         height: 50,
@@ -191,18 +200,18 @@ const styles = StyleSheet.create({
     },
     inputViewDropDown: {
         height: 50,
-       
+
         borderRadius: 50 / 2,
         backgroundColor: '#ffffff',
         // alignItems: 'center',
         justifyContent: 'center',
         shadowColor: '#000',
-        padding:10,
+        padding: 10,
         shadowOffset: {
             width: 4,
             height: 4,
         },
-        borderColor:'gray',
+        borderColor: 'gray',
         shadowOpacity: 0.29,
         shadowRadius: 4.65,
         elevation: 7,
@@ -213,9 +222,9 @@ const styles = StyleSheet.create({
         color: colors.secondaryBlue,
         marginBottom: 5
     },
-    iconCircle:  {
+    iconCircle: {
         height: moderateScale(55),
-        width:moderateScale(55),
+        width: moderateScale(55),
         borderRadius: moderateScale(55) / 2,
         backgroundColor: '#ffffff',
         alignItems: 'center',
@@ -229,10 +238,10 @@ const styles = StyleSheet.create({
         shadowRadius: 4.65,
         elevation: 7,
     },
-    circleView:{ 
-        flex: 0.20, 
-        justifyContent: "center", 
-        alignItems: "center" 
+    circleView: {
+        flex: 0.20,
+        justifyContent: "center",
+        alignItems: "center"
     },
     activityIcon: {
         height: moderateScale(60),
@@ -247,30 +256,28 @@ const styles = StyleSheet.create({
         width: scale(20),
     },
     headerLeftIcon: {
-        height: 30,
-        width: 30,
-        left: 15,
+        left: 10,
         position: "absolute",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
     },
-    profilePress:{
-        borderWidth:1,
-        borderRadius:50,
-        borderColor:'silver',
-        marginTop:20,
-        padding:10
+    profilePress: {
+        borderWidth: 1,
+        borderRadius: 50,
+        borderColor: 'silver',
+        marginTop: 20,
+        padding: 10
     },
-    profile:{
-        height:80,
-        width:80,
-        alignSelf:'center'
+    profile: {
+        height: 80,
+        width: 80,
+        alignSelf: 'center'
     },
-    view3:{ 
-        flexDirection: "row", 
-        width: '90%', 
-        justifyContent: "space-between", 
-        alignItems: "center", 
+    view3: {
+        flexDirection: "row",
+        width: '90%',
+        justifyContent: "space-between",
+        alignItems: "center",
     }
 
 })

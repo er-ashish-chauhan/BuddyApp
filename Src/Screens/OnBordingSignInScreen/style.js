@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import {  moderateScale, scale, verticalScale } from 'react-native-size-matters';
-import { colors, fontNames , typography} from "../../Theme";
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import { colors, fontNames, typography } from "../../Theme";
 
 const width = Dimensions.get('screen').width
 
@@ -57,7 +57,8 @@ const styles = StyleSheet.create({
         color: "black"
     },
     appLogoView: {
-        flex: 0.15,
+        paddingTop: "10%",
+        flex: 0.16,
         backgroundColor: colors.primaryBlue,
         width: "100%",
         alignItems: "center",
@@ -91,14 +92,18 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     mainView: {
-        flex: 0.85,
+        flex: 1,
         width: "100%",
-        alignItems: "center",
-        alignItems: 'center',
+        // alignItems: "center",
+        // alignItems: 'center',
         paddingTop: 25,
+        paddingBottom: 50
     },
     pagNumberView: {
-        flex: 0.6,
+        // flex: 1,
+        marginLeft: 5,
+        marginTop: 30,
+        paddingBottom: 20,
         width: "100%",
         justifyContent: "center",
         alignItems: "center",
@@ -108,11 +113,13 @@ const styles = StyleSheet.create({
         color: colors.white,
         fontSize: typography.FONT_SIZE_40,
         fontWeight: "bold",
-        alignSelf:"flex-start",
-        paddingLeft:25
+        alignSelf: "flex-start",
+        paddingLeft: 25,
+        opacity: .5
     },
     headingView: {
-        flex: 0.17,
+        // flex: 0.17,
+        paddingTop: '10%',
         flexDirection: "row",
         backgroundColor: colors.white,
         width: "100%",
@@ -123,7 +130,8 @@ const styles = StyleSheet.create({
     headingText: {
         fontSize: typography.FONT_SIZE_20,
         color: colors.black,
-        fontWeight: "bold",
+        fontFamily: fontNames.boldFont,
+        // fontWeight: "bold",
         marginTop: moderateScale(5),
     },
     dogIconViewpage2: {
@@ -132,27 +140,28 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     iconStylePage2: {
-        height: verticalScale(70),
-        width: scale(70),
-        marginTop:moderateScale(10)
+        height: verticalScale(75),
+        width: scale(75),
+        marginTop: 15
     },
     inputHeadingText: {
         alignSelf: "flex-start",
         paddingLeft: 35,
-        color: colors.secondaryBlue,
-        marginBottom: 5,
+        color: colors.lableColor,
+        fontWeight: "600",
+        marginBottom: 8,
     },
-    inputViewPage2:{ 
-        flex: 0.5, 
-        justifyContent:"center", 
-        alignItems:"center" , 
-        
+    inputViewPage2: {
+        flex: 0.5,
+        justifyContent: "center",
+        alignItems: "center",
+
     },
-    dropDownView:{
-        flex: 0.5, 
-        justifyContent:"center", 
-        alignItems:"flex-start",
-      width:'95%',borderWidth:2
+    dropDownView: {
+        flex: 0.5,
+        justifyContent: "center",
+        alignItems: "flex-start",
+        width: '95%', borderWidth: 2
     },
     buttonPage2: {
         height: 50,
@@ -161,27 +170,27 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff',
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom:8
+        marginBottom: 8
     },
-    buttonTextPage2:{
-        color:colors.white, 
-        fontWeight:"bold", 
-        fontSize:15
+    buttonTextPage2: {
+        color: colors.white,
+        fontWeight: "bold",
+        fontSize: 15
     },
-    privacyPolicyView:{
-        paddingHorizontal:35, 
-        justifyContent:"center", 
-        alignItems:"center"
+    privacyPolicyView: {
+        paddingHorizontal: 35,
+        justifyContent: "center",
+        alignItems: "center"
     },
-    privacyPolicyText:{
-        fontSize:14, 
-        marginTop:10, 
-        textAlign:"center"
+    privacyPolicyText: {
+        fontSize: 14,
+        marginTop: 10,
+        textAlign: "center"
     },
-    buttonView:{ 
-        flex: 0.4, 
-        justifyContent:"center", 
-        alignItems:"center" 
+    buttonView: {
+        flex: 0.4,
+        justifyContent: "center",
+        alignItems: "center"
     },
     DropDownView: {
         height: 50,
@@ -190,19 +199,19 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     inputViewDropDown: {
-        height: 50,
-       
-        borderRadius: 50 / 2,
+        height: 40,
+
+        borderRadius: 40 / 2,
         backgroundColor: '#ffffff',
         // alignItems: 'center',
         justifyContent: 'center',
         shadowColor: '#000',
-        padding:10,
+        padding: 10,
         shadowOffset: {
             width: 4,
             height: 4,
         },
-        borderColor:'gray',
+        borderColor: 'gray',
         shadowOpacity: 0.29,
         shadowRadius: 4.65,
         elevation: 7,
@@ -213,10 +222,10 @@ const styles = StyleSheet.create({
         color: colors.secondaryBlue,
         marginBottom: 5
     },
-    iconCircle:  {
-        height: moderateScale(55),
-        width:moderateScale(55),
-        borderRadius: moderateScale(55) / 2,
+    iconCircle: {
+        height: moderateScale(58),
+        width: moderateScale(58),
+        borderRadius: moderateScale(58) / 2,
         backgroundColor: '#ffffff',
         alignItems: 'center',
         justifyContent: 'center',
@@ -229,10 +238,10 @@ const styles = StyleSheet.create({
         shadowRadius: 4.65,
         elevation: 7,
     },
-    circleView:{ 
-        flex: 0.20, 
-        justifyContent: "center", 
-        alignItems: "center" 
+    circleView: {
+        flex: 0.20,
+        justifyContent: "center",
+        alignItems: "center"
     },
     activityIcon: {
         height: moderateScale(60),
@@ -246,11 +255,29 @@ const styles = StyleSheet.create({
         height: verticalScale(20),
         width: scale(20),
     },
-    view3:{ 
-        flexDirection: "row", 
-        width: '90%', 
-        justifyContent: "space-between", 
-        alignItems: "center", 
+    view3: {
+        flexDirection: "row",
+        width: '90%',
+        justifyContent: "space-between",
+        alignItems: "center",
+    },
+    headerLeftIcon: {
+        height: 30,
+        width: 30,
+        left: 10,
+        // position: "absolute",
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    backImage: {
+        height: 30,
+        width: 30,
+    },
+    flexRow: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        width: width,
+        alignItems: "center",
     }
 
 })
