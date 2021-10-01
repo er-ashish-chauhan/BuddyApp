@@ -43,6 +43,7 @@ export default function DrawerNavigation() {
           fontFamily: fontNames.boldFont,
         },
       }}
+      initialRouteName="UpdateProfile"
       // Here we are setting our custom sidebar menu
       drawerContent={(props) => <CustomSidebarMenu {...props} />}
     >
@@ -62,7 +63,7 @@ export default function DrawerNavigation() {
       />
       <Drawer.Screen
         options={{
-          drawerLabel: "Privay Policy",
+          drawerLabel: "Privacy Policy",
         }}
         name="privacy"
         component={Privacy}

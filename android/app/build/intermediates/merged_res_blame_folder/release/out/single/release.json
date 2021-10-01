@@ -1,0 +1,242 @@
+[
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_jaywennigton.jpg.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_jaywennigton.jpg"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_buddyprofile.jpg.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_buddyprofile.jpg"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_karsten.jpg.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_karsten.jpg"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_cameraicon.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_cameraicon.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_bg.jpeg.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_bg.jpeg"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_joecaione.jpg.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_joecaione.jpg"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-xxxhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-xxxhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_pauline.jpg.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_pauline.jpg"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_findericon.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_findericon.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_clockred.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_clockred.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_buddyupactivityicons4.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_buddyupactivityicons4.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_waldo.jpg.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_waldo.jpg"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-xhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-xhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_dogbed.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_dogbed.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_apple.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_apple.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_leash.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_leash.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/raw_node_modules_reactnativevectoricons_glyphmaps_fontawesome.json.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/raw/node_modules_reactnativevectoricons_glyphmaps_fontawesome.json"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_sso.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_sso.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_buddyupactivityicons3.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_buddyupactivityicons3.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_facebookicon.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_facebookicon.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_ball.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_ball.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_dogicon2.jpeg.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_dogicon2.jpeg"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-xhdpi_node_modules_reactnavigation_stack_src_views_assets_backicon.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-xhdpi/node_modules_reactnavigation_stack_src_views_assets_backicon.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/raw_node_modules_reactnativevectoricons_glyphmaps_materialcommunityicons.json.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/raw/node_modules_reactnativevectoricons_glyphmaps_materialcommunityicons.json"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_rubyalford.jpg.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_rubyalford.jpg"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_jennymarvin.jpg.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_jennymarvin.jpg"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_dogicon.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_dogicon.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-xxxhdpi_node_modules_reactnavigation_stack_src_views_assets_backicon.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-xxxhdpi/node_modules_reactnavigation_stack_src_views_assets_backicon.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_instaicon.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_instaicon.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_buddyupactivityicons2.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_buddyupactivityicons2.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/raw_app.json.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/raw/app.json"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_backicon.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_backicon.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-hdpi_node_modules_reactnavigation_stack_src_views_assets_backicon.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-hdpi/node_modules_reactnavigation_stack_src_views_assets_backicon.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_buddyupactivityicons1.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_buddyupactivityicons1.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_dogfood.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_dogfood.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_hamburgermenu.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_hamburgermenu.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-hdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-hdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_buddyuplogo.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_buddyuplogo.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_alvannee.jpg.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_alvannee.jpg"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_tictokicon.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_tictokicon.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_clockblue.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_clockblue.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_richard.jpg.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_richard.jpg"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-xxhdpi_node_modules_reactnavigation_stack_src_views_assets_backicon.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-xxhdpi/node_modules_reactnavigation_stack_src_views_assets_backicon.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_louie.jpg.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_louie.jpg"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_node_modules_reactnavigation_stack_src_views_assets_backiconmask.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/node_modules_reactnavigation_stack_src_views_assets_backiconmask.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_buddyupactivityicons5.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_buddyupactivityicons5.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_src_assets_image_quality.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/src_assets_image_quality.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-xxhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-xxhdpi/node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/intermediates/res/merged/release/drawable-mdpi_node_modules_reactnavigation_stack_src_views_assets_backicon.png.flat",
+        "source": "/Users/ashishchauhan/Projects/BuddyApp/android/app/build/generated/res/react/release/drawable-mdpi/node_modules_reactnavigation_stack_src_views_assets_backicon.png"
+    }
+]

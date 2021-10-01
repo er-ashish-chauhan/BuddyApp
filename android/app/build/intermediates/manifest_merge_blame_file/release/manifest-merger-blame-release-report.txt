@@ -1,0 +1,306 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.algobuffer.buddyup"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:4:5-67
+11-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.CAMERA" />
+12-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:5:5-64
+12-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:5:22-62
+13
+14    <uses-feature
+14-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:6:5-85
+15        android:name="android.hardware.camera"
+15-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:6:19-57
+16        android:required="false" />
+16-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:6:58-82
+17    <uses-feature
+17-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:7:5-91
+18        android:name="android.hardware.camera.front"
+18-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:7:19-63
+19        android:required="false" />
+19-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:7:64-88
+20
+21    <uses-permission android:name="android.permission.WAKE_LOCK" />
+21-->[:react-native-firebase_auth] /Users/ashishchauhan/Projects/BuddyApp/node_modules/@react-native-firebase/auth/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:5-68
+21-->[:react-native-firebase_auth] /Users/ashishchauhan/Projects/BuddyApp/node_modules/@react-native-firebase/auth/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:22-65
+22    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+22-->[:react-native-firebase_auth] /Users/ashishchauhan/Projects/BuddyApp/node_modules/@react-native-firebase/auth/android/build/intermediates/library_manifest/release/AndroidManifest.xml:13:5-79
+22-->[:react-native-firebase_auth] /Users/ashishchauhan/Projects/BuddyApp/node_modules/@react-native-firebase/auth/android/build/intermediates/library_manifest/release/AndroidManifest.xml:13:22-76
+23
+24    <queries>
+24-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:10:5-14:15
+25        <intent>
+25-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:11:9-13:18
+26            <action android:name="android.media.action.IMAGE_CAPTURE" />
+26-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:13-73
+26-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:21-70
+27        </intent>
+28    </queries>
+29
+30    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+30-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:16:5-81
+30-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:16:22-78
+31
+32    <application
+32-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:8:5-27:19
+33        android:name="com.algobuffer.buddyup.MainApplication"
+33-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:10:7-38
+34        android:allowBackup="false"
+34-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:14:7-34
+35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+35-->[androidx.core:core:1.3.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/0980a34fb89eb7f3413c398838e5f7e1/core-1.3.0/AndroidManifest.xml:24:18-86
+36        android:icon="@mipmap/ic_launcher"
+36-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:12:7-41
+37        android:label="@string/app_name"
+37-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:11:7-39
+38        android:roundIcon="@mipmap/ic_launcher_round"
+38-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:13:7-52
+39        android:theme="@style/AppTheme"
+39-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:15:7-38
+40        android:usesCleartextTraffic="true" >
+40-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:9:9-44
+41        <activity
+41-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:16:7-26:18
+42            android:name="com.algobuffer.buddyup.MainActivity"
+42-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:17:9-37
+43            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+43-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:19:9-86
+44            android:label="@string/app_name"
+44-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:18:9-41
+45            android:launchMode="singleTask"
+45-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:20:9-40
+46            android:windowSoftInputMode="adjustPan" >
+46-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:21:9-48
+47            <intent-filter>
+47-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:22:9-25:25
+48                <action android:name="android.intent.action.MAIN" />
+48-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:23:13-65
+48-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:23:21-62
+49
+50                <category android:name="android.intent.category.LAUNCHER" />
+50-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:24:13-73
+50-->/Users/ashishchauhan/Projects/BuddyApp/android/app/src/main/AndroidManifest.xml:24:23-70
+51            </intent-filter>
+52        </activity>
+53
+54        <provider
+54-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:19:9-27:20
+55            android:name="androidx.core.content.FileProvider"
+55-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:20:13-62
+56            android:authorities="com.algobuffer.buddyup.provider"
+56-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:21:13-60
+57            android:exported="false"
+57-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:22:13-37
+58            android:grantUriPermissions="true" >
+58-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:23:13-47
+59            <meta-data
+59-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:24:13-26:58
+60                android:name="android.support.FILE_PROVIDER_PATHS"
+60-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:25:17-67
+61                android:resource="@xml/provider_paths" />
+61-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:26:17-55
+62        </provider>
+63
+64        <activity
+64-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:29:9-31:72
+65            android:name="com.yalantis.ucrop.UCropActivity"
+65-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:30:13-60
+66            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+66-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:31:13-69
+67
+68        <provider
+68-->[:react-native-webview] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:9-20:20
+69            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
+69-->[:react-native-webview] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:13:13-83
+70            android:authorities="com.algobuffer.buddyup.fileprovider"
+70-->[:react-native-webview] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:14:13-64
+71            android:exported="false"
+71-->[:react-native-webview] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:15:13-37
+72            android:grantUriPermissions="true" >
+72-->[:react-native-webview] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:16:13-47
+73            <meta-data
+73-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:24:13-26:58
+74                android:name="android.support.FILE_PROVIDER_PATHS"
+74-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:25:17-67
+75                android:resource="@xml/file_provider_paths" />
+75-->[:react-native-image-crop-picker] /Users/ashishchauhan/Projects/BuddyApp/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:26:17-55
+76        </provider>
+77
+78        <activity
+78-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:27:9-44:20
+79            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+79-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:28:13-80
+80            android:excludeFromRecents="true"
+80-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:29:13-46
+81            android:exported="true"
+81-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:30:13-36
+82            android:launchMode="singleTask"
+82-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:31:13-44
+83            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+83-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:32:13-72
+84            <intent-filter>
+84-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:33:13-43:29
+85                <action android:name="android.intent.action.VIEW" />
+85-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:17-69
+85-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:25-66
+86
+87                <category android:name="android.intent.category.DEFAULT" />
+87-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
+87-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
+88                <category android:name="android.intent.category.BROWSABLE" />
+88-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:17-78
+88-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:27-75
+89
+90                <data
+90-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:39:17-42:51
+91                    android:host="firebase.auth"
+91-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:40:21-49
+92                    android:path="/"
+92-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:41:21-37
+93                    android:scheme="genericidp" />
+93-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:42:21-48
+94            </intent-filter>
+95        </activity>
+96        <activity
+96-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:45:9-62:20
+97            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+97-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:46:13-79
+98            android:excludeFromRecents="true"
+98-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:47:13-46
+99            android:exported="true"
+99-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:48:13-36
+100            android:launchMode="singleTask"
+100-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:49:13-44
+101            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+101-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:50:13-72
+102            <intent-filter>
+102-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:51:13-61:29
+103                <action android:name="android.intent.action.VIEW" />
+103-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:17-69
+103-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:25-66
+104
+105                <category android:name="android.intent.category.DEFAULT" />
+105-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
+105-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
+106                <category android:name="android.intent.category.BROWSABLE" />
+106-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:17-78
+106-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:27-75
+107
+108                <data
+108-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:39:17-42:51
+109                    android:host="firebase.auth"
+109-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:40:21-49
+110                    android:path="/"
+110-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:41:21-37
+111                    android:scheme="recaptcha" />
+111-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:42:21-48
+112            </intent-filter>
+113        </activity>
+114
+115        <service
+115-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:64:9-73:19
+116            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
+116-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:65:13-101
+117            android:enabled="true"
+117-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:66:13-35
+118            android:exported="false" >
+118-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:67:13-37
+119            <intent-filter>
+119-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:68:13-72:29
+120                <action android:name="com.google.firebase.auth.api.gms.service.START" />
+120-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:69:17-89
+120-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:69:25-86
+121
+122                <category android:name="android.intent.category.DEFAULT" />
+122-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
+122-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
+123            </intent-filter>
+124        </service>
+125        <service
+125-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:74:9-80:19
+126            android:name="com.google.firebase.components.ComponentDiscoveryService"
+126-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:75:13-84
+127            android:directBootAware="true"
+127-->[com.google.firebase:firebase-common:20.0.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/84445aaed7c34182bbea6bd7bbbc3994/jetified-firebase-common-20.0.0/AndroidManifest.xml:35:13-43
+128            android:exported="false" >
+128-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:76:13-37
+129            <meta-data
+129-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:77:13-79:85
+130                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+130-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:78:17-109
+131                android:value="com.google.firebase.components.ComponentRegistrar" />
+131-->[com.google.firebase:firebase-auth:21.0.1] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/33777f537503fcdd4880b2f6269591d7/jetified-firebase-auth-21.0.1/AndroidManifest.xml:79:17-82
+132            <meta-data
+132-->[com.google.firebase:firebase-firestore:23.0.3] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/7f6ecf49c9b6413ed21b11a79220488c/jetified-firebase-firestore-23.0.3/AndroidManifest.xml:20:13-22:85
+133                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+133-->[com.google.firebase:firebase-firestore:23.0.3] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/7f6ecf49c9b6413ed21b11a79220488c/jetified-firebase-firestore-23.0.3/AndroidManifest.xml:21:17-111
+134                android:value="com.google.firebase.components.ComponentRegistrar" />
+134-->[com.google.firebase:firebase-firestore:23.0.3] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/7f6ecf49c9b6413ed21b11a79220488c/jetified-firebase-firestore-23.0.3/AndroidManifest.xml:22:17-82
+135        </service>
+136
+137        <activity
+137-->[com.google.android.gms:play-services-auth:19.2.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/96112740538e4639241c2ea9460e5568/jetified-play-services-auth-19.2.0/AndroidManifest.xml:23:9-27:75
+138            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+138-->[com.google.android.gms:play-services-auth:19.2.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/96112740538e4639241c2ea9460e5568/jetified-play-services-auth-19.2.0/AndroidManifest.xml:24:13-93
+139            android:excludeFromRecents="true"
+139-->[com.google.android.gms:play-services-auth:19.2.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/96112740538e4639241c2ea9460e5568/jetified-play-services-auth-19.2.0/AndroidManifest.xml:25:13-46
+140            android:exported="false"
+140-->[com.google.android.gms:play-services-auth:19.2.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/96112740538e4639241c2ea9460e5568/jetified-play-services-auth-19.2.0/AndroidManifest.xml:26:13-37
+141            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+141-->[com.google.android.gms:play-services-auth:19.2.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/96112740538e4639241c2ea9460e5568/jetified-play-services-auth-19.2.0/AndroidManifest.xml:27:13-72
+142        <!--
+143            Service handling Google Sign-In user revocation. For apps that do not integrate with
+144            Google Sign-In, this service will never be started.
+145        -->
+146        <service
+146-->[com.google.android.gms:play-services-auth:19.2.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/96112740538e4639241c2ea9460e5568/jetified-play-services-auth-19.2.0/AndroidManifest.xml:33:9-37:51
+147            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+147-->[com.google.android.gms:play-services-auth:19.2.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/96112740538e4639241c2ea9460e5568/jetified-play-services-auth-19.2.0/AndroidManifest.xml:34:13-89
+148            android:exported="true"
+148-->[com.google.android.gms:play-services-auth:19.2.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/96112740538e4639241c2ea9460e5568/jetified-play-services-auth-19.2.0/AndroidManifest.xml:35:13-36
+149            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+149-->[com.google.android.gms:play-services-auth:19.2.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/96112740538e4639241c2ea9460e5568/jetified-play-services-auth-19.2.0/AndroidManifest.xml:36:13-107
+150            android:visibleToInstantApps="true" />
+150-->[com.google.android.gms:play-services-auth:19.2.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/96112740538e4639241c2ea9460e5568/jetified-play-services-auth-19.2.0/AndroidManifest.xml:37:13-48
+151
+152        <activity
+152-->[com.google.android.gms:play-services-base:17.5.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/ee9e0004486d7f3ee7311c44fe1063b7/jetified-play-services-base-17.5.0/AndroidManifest.xml:23:9-26:75
+153            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+153-->[com.google.android.gms:play-services-base:17.5.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/ee9e0004486d7f3ee7311c44fe1063b7/jetified-play-services-base-17.5.0/AndroidManifest.xml:24:13-79
+154            android:exported="false"
+154-->[com.google.android.gms:play-services-base:17.5.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/ee9e0004486d7f3ee7311c44fe1063b7/jetified-play-services-base-17.5.0/AndroidManifest.xml:25:13-37
+155            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+155-->[com.google.android.gms:play-services-base:17.5.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/ee9e0004486d7f3ee7311c44fe1063b7/jetified-play-services-base-17.5.0/AndroidManifest.xml:26:13-72
+156
+157        <provider
+157-->[com.google.firebase:firebase-common:20.0.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/84445aaed7c34182bbea6bd7bbbc3994/jetified-firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
+158            android:name="com.google.firebase.provider.FirebaseInitProvider"
+158-->[com.google.firebase:firebase-common:20.0.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/84445aaed7c34182bbea6bd7bbbc3994/jetified-firebase-common-20.0.0/AndroidManifest.xml:27:13-77
+159            android:authorities="com.algobuffer.buddyup.firebaseinitprovider"
+159-->[com.google.firebase:firebase-common:20.0.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/84445aaed7c34182bbea6bd7bbbc3994/jetified-firebase-common-20.0.0/AndroidManifest.xml:28:13-72
+160            android:directBootAware="true"
+160-->[com.google.firebase:firebase-common:20.0.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/84445aaed7c34182bbea6bd7bbbc3994/jetified-firebase-common-20.0.0/AndroidManifest.xml:29:13-43
+161            android:exported="false"
+161-->[com.google.firebase:firebase-common:20.0.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/84445aaed7c34182bbea6bd7bbbc3994/jetified-firebase-common-20.0.0/AndroidManifest.xml:30:13-37
+162            android:initOrder="100" />
+162-->[com.google.firebase:firebase-common:20.0.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/84445aaed7c34182bbea6bd7bbbc3994/jetified-firebase-common-20.0.0/AndroidManifest.xml:31:13-36
+163
+164        <meta-data
+164-->[com.google.android.gms:play-services-basement:17.5.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/59dcef22e8089fc021cab5b031f67edd/jetified-play-services-basement-17.5.0/AndroidManifest.xml:23:9-25:69
+165            android:name="com.google.android.gms.version"
+165-->[com.google.android.gms:play-services-basement:17.5.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/59dcef22e8089fc021cab5b031f67edd/jetified-play-services-basement-17.5.0/AndroidManifest.xml:24:13-58
+166            android:value="@integer/google_play_services_version" />
+166-->[com.google.android.gms:play-services-basement:17.5.0] /Users/ashishchauhan/.gradle/caches/transforms-2/files-2.1/59dcef22e8089fc021cab5b031f67edd/jetified-play-services-basement-17.5.0/AndroidManifest.xml:25:13-66
+167    </application>
+168
+169</manifest>

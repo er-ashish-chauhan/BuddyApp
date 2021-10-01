@@ -102,7 +102,7 @@ function* profileUpdateSaga(action) {
                 alert(result.result.data.msg)
             }, 200);
             setTimeout(() => {
-                navigation.goBack();
+                navigation.navigate("Home");
             }, 2000);
         }
         else {

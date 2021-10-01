@@ -27,30 +27,39 @@ import Toast from 'react-native-simple-toast';
 import { set } from "react-native-reanimated";
 import { Loader } from "../../Components/Loader";
 import { useSelector } from "react-redux";
-import { APP_BASE_URL, BREEDS } from "../../Theme/AppConstants";
+import { AGES, APP_BASE_URL, BREEDS } from "../../Theme/AppConstants";
 const { width, height } = Dimensions.get("window");
+// const age = [
+//     { label: '6 Months', value: 0.5 },
+//     { label: '1 Year', value: 1 },
+//     { label: '2 Years', value: 2 },
+//     { label: '3 Years', value: 3 },
+//     { label: '4 Years', value: 4 },
+//     { label: '5 Years', value: 5 },
+//     { label: '6 Years', value: 6 },
+//     { label: '7 Years', value: 7 },
+//     { label: '8 Years', value: 8 },
+//     { label: '9 Years', value: 9 },
+//     { label: '10 Years', value: 10 },
+//     { label: '11 Years', value: 11 },
+//     { label: '12 Years', value: 12 },
+//     { label: '13 Years', value: 13 },
+//     { label: '14 Years', value: 14 },
+//     { label: '15 Years', value: 15 },
+//     { label: '16 Years', value: 16 },
+//     { label: '17 Years', value: 17 },
+//     { label: '18 Years', value: 18 },
+//     { label: '19 Years', value: 19 },
+//     { label: '20 Years', value: 20 },
+// ]
+
 const age = [
-    { label: '6 Months', value: 0.5 },
-    { label: '1 Year', value: 1 },
-    { label: '2 Years', value: 2 },
-    { label: '3 Years', value: 3 },
-    { label: '4 Years', value: 4 },
-    { label: '5 Years', value: 5 },
-    { label: '6 Years', value: 6 },
-    { label: '7 Years', value: 7 },
-    { label: '8 Years', value: 8 },
-    { label: '9 Years', value: 9 },
-    { label: '10 Years', value: 10 },
-    { label: '11 Years', value: 11 },
-    { label: '12 Years', value: 12 },
-    { label: '13 Years', value: 13 },
-    { label: '14 Years', value: 14 },
-    { label: '15 Years', value: 15 },
-    { label: '16 Years', value: 16 },
-    { label: '17 Years', value: 17 },
-    { label: '18 Years', value: 18 },
-    { label: '19 Years', value: 19 },
-    { label: '20 Years', value: 20 },
+    { label: '0-5 Years', value: "0-5" },
+    { label: '6-10 Years', value: "6-10" },
+    { label: '11-15 Years', value: "11-15" },
+    { label: '16-20 Years', value: "16-20" },
+    { label: '21-25 Years', value: "21-25" },
+    { label: '26-30 Years', value: "26-30" },
 ]
 
 const size = [
@@ -103,9 +112,29 @@ export const ProfileUpate = (props) => {
     const [FSIZE, setFSize] = useState()
     const [FLEVELS, setFLevelse] = useState()
     const [FBREED, setFBreed] = useState()
-
+    const [AgeForBuddyFriend, setAgeForBuddyFriend] = useState(AGES);
+    const [SizeForBuddyFriend, setSizeForBuddyFriend] = useState(size);
+    const [engeryForBuddyFriend, setEngeryForBuddyFriend] = useState(levels);
+    const [breedForBuddyFriend, setBreedForBuddyFriend] = useState(BREEDS);
 
     useEffect(() => {
+        const noPrefObj = { label: "No preference", value: "No preference" };
+        const currentAgesArr = AgeForBuddyFriend;
+        currentAgesArr.unshift(noPrefObj);
+        setAgeForBuddyFriend(currentAgesArr);
+
+        const currentSizeArr = SizeForBuddyFriend;
+        currentSizeArr.unshift(noPrefObj);
+        setSizeForBuddyFriend(currentSizeArr);
+
+        const currentEnergyArr = engeryForBuddyFriend;
+        currentEnergyArr.unshift(noPrefObj);
+        setEngeryForBuddyFriend(currentEnergyArr);
+
+        const currentBreedsArr = breedForBuddyFriend;
+        currentBreedsArr.unshift(noPrefObj);
+        setBreedForBuddyFriend(currentBreedsArr);
+
         get_UserDetails();
     }, [])
 
@@ -140,7 +169,8 @@ export const ProfileUpate = (props) => {
     const [state, setState] = useState('')
     const [imageLoading, setImageLoading] = useState(false);
     const [bio, setBio] = useState("");
-    const pickerRef = useRef()
+    const pickerRef = useRef();
+
 
     //get User details
     const get_UserDetails = () => {
@@ -308,7 +338,7 @@ export const ProfileUpate = (props) => {
                     "city": city,
                     "name": name.trim(),
                     "buddyName": buddyName.trim(),
-                    "age": BAGE.toString(),
+                    "age": BAGE,
                     "size": BSIZE,
                     "energyLevel": BLEVELS,
                     "breed": BBREED,
@@ -320,7 +350,7 @@ export const ProfileUpate = (props) => {
                         BFOOD && "bFood"
                     ],
                     "pereferences": {
-                        "age": FAGE.toString(),
+                        "age": FAGE,
                         "size": FSIZE,
                         "energyLevel": FLEVELS,
                         "breed": FBREED,
@@ -377,7 +407,7 @@ export const ProfileUpate = (props) => {
                                     onChangeText={text => setBio(text)}
                                     multiline={true}
                                     numberOfLines={3}
-                                    placeholder="Bio"
+                                    placeholder="Tell us a little about what makes your pup special"
                                     style={styles.bioField}
                                     placeHolderTextColor="#ccc"
                                 />
@@ -422,7 +452,7 @@ export const ProfileUpate = (props) => {
                                 <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', }]}>
                                     <RNPickerSelect
                                         placeholder={placeholderAge}
-                                        items={age}
+                                        items={AGES}
                                         onValueChange={value => {
                                             setBAge(value)
                                         }}
@@ -558,7 +588,7 @@ export const ProfileUpate = (props) => {
                     </View>
                 </View>
                 <View style={[styles.headingView, { flex: 0.08, backgroundColor: "#e6f5ff", marginTop: 20 }]}>
-                    <Text style={[styles.headingText, { color: colors.black, paddingTop: 20}]}>What does Buddy want in a friend?</Text>
+                    <Text style={[styles.headingText, { color: colors.black, paddingTop: 20 }]}>What does {name.trimEnd()} want in a friend?</Text>
                 </View>
                 <View style={{ flex: 0.55, backgroundColor: "#e6f5ff" }}>
                     <View style={[styles.inputViewPage2, { flex: 0.28 }]}>
@@ -568,7 +598,7 @@ export const ProfileUpate = (props) => {
                                 <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', marginTop: 10 }]}>
                                     <RNPickerSelect
                                         placeholder={placeholderAge}
-                                        items={age}
+                                        items={AgeForBuddyFriend}
                                         onValueChange={value => {
                                             setFAge(value)
                                         }}
@@ -587,7 +617,7 @@ export const ProfileUpate = (props) => {
                                 <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', marginTop: 10 }]}>
                                     <RNPickerSelect
                                         placeholder={placeholderSize}
-                                        items={size}
+                                        items={SizeForBuddyFriend}
                                         onValueChange={value => {
                                             setFSize(value)
                                         }}
@@ -606,7 +636,7 @@ export const ProfileUpate = (props) => {
                                 <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', marginTop: 10 }]}>
                                     <RNPickerSelect
                                         placeholder={placeholderLevels}
-                                        items={levels}
+                                        items={engeryForBuddyFriend}
                                         onValueChange={value => {
                                             setFLevelse(value)
                                         }}
@@ -628,7 +658,7 @@ export const ProfileUpate = (props) => {
                         <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', marginTop: 10 }]}>
                             <RNPickerSelect
                                 placeholder={placeholderBreed}
-                                items={breed}
+                                items={breedForBuddyFriend}
                                 onValueChange={value => {
                                     setFBreed(value)
                                 }}

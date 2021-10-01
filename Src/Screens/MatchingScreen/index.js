@@ -67,14 +67,7 @@ const MatchingScreen = (props) => {
                             style={[styles.registerButton, { marginTop: 30 }]}>
                             <Text style={styles.signInText}>Keep swiping</Text>
                         </TouchableOpacity>
-
                     </View>
-
-
-
-
-
-
                 </ImageBackground>
             </View>
         </>

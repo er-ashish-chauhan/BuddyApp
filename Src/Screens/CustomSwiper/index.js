@@ -356,32 +356,29 @@ const CustomSwiper = ({ navigation }) => {
     }
 
     return (
-        <>
+        <SafeAreaView style={{ flex: 1, }}>
+            <StatusBar backgroundColor={colors.white} barStyle="dark-content" />
+            <View style={styles.mainWrapper}>
+                <View style={styles.header}>
+                    <TouchableOpacity
+                        style={styles.headerLeftIcon}
 
-            <SafeAreaView style={{ flex: 1, }}>
-                <StatusBar backgroundColor={colors.white} barStyle="dark-content" />
-                <View style={styles.mainWrapper}>
-                    <View style={styles.header}>
-                        <TouchableOpacity
+                        onPress={() => navigation.toggleDrawer()}>
+                        <Image
                             style={styles.headerLeftIcon}
-
-                            onPress={() => navigation.toggleDrawer()}>
-                            <Image
-                                style={styles.headerLeftIcon}
-                                source={Images.Images.hamburgerMenu}
-                            />
-                        </TouchableOpacity>
-                        <Text style={[styles.headerTitle, { fontWeight: "bold" }]}>Buddy</Text>
-                        <Text style={[styles.headerTitle, { fontWeight: "normal" }]}>Up</Text>
-                    </View>
-
-                    <View style={{ flex: 0.92, width: "100%", backgroundColor: colors.primaryBlue, margin: 10 }}>
-                        {CardComponent()}
-                    </View>
-
+                            source={Images.Images.hamburgerMenu}
+                        />
+                    </TouchableOpacity>
+                    <Text style={[styles.headerTitle, { fontWeight: "bold" }]}>Buddy</Text>
+                    <Text style={[styles.headerTitle, { fontWeight: "normal" }]}>Up</Text>
                 </View>
-            </SafeAreaView>
-        </>
+
+                <View style={{ flex: 0.92, width: "100%", backgroundColor: colors.primaryBlue, margin: 10 }}>
+                    {CardComponent()}
+                </View>
+
+            </View>
+        </SafeAreaView>
     )
 }
 

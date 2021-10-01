@@ -1,0 +1,9 @@
+com/algobuffer/buddyup/MainActivity.java
+ com.algobuffer.buddyup.MainActivity
+com/algobuffer/buddyup/MainApplication.java
+ com.algobuffer.buddyup.MainApplication
+ com.algobuffer.buddyup.MainApplication$1
+com/algobuffer/buddyup/BuildConfig.java
+ com.algobuffer.buddyup.BuildConfig
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList

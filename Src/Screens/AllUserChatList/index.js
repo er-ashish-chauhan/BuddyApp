@@ -260,13 +260,14 @@ const AllUserChatList = ({ navigation }) => {
     return (
       <View
         style={{
-          height: height * 0.5,
+          maxHeight: height * 0.5,
           width: "100%",
           alignItems: "center",
           justifyContent: "center",
+          marginTop: 20
         }}
       >
-        <Text>No chat list found</Text>
+        <Text style={[styles.listHeading, {fontSize: 15}]}>No chat list found</Text>
       </View>
     );
   };
@@ -274,13 +275,14 @@ const AllUserChatList = ({ navigation }) => {
     return (
       <View
         style={{
-          height: "100%",
+          maxHeight: "100%",
           width: "100%",
           alignItems: "center",
           justifyContent: "center",
+          marginTop: 20
         }}
       >
-        <Text>No chat list found</Text>
+        <Text style={[styles.listHeading, {fontSize: 15}]}>No chat list found</Text>
       </View>
     );
   };

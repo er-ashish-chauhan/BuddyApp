@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         color: "black"
     },
     appLogoView: {
-        paddingTop: "10%",
+        // paddingTop: "10%",
         flex: 0.16,
         backgroundColor: colors.primaryBlue,
         width: "100%",
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
         fontSize: typography.FONT_SIZE_40,
         fontWeight: "bold",
         alignSelf: "flex-start",
-        paddingLeft: 25,
+        // paddingLeft: 25,
         opacity: .5
     },
     headingView: {
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
     },
     iconStylePage2: {
         height: verticalScale(75),
-        width: scale(75),
+        width: scale(85),
         marginTop: 15
     },
     inputHeadingText: {
@@ -155,7 +155,6 @@ const styles = StyleSheet.create({
         flex: 0.5,
         justifyContent: "center",
         alignItems: "center",
-
     },
     dropDownView: {
         flex: 0.5,
@@ -165,7 +164,7 @@ const styles = StyleSheet.create({
     },
     buttonPage2: {
         height: 50,
-        width: '95%',
+        width: '90%',
         borderRadius: 50 / 2,
         backgroundColor: '#ffffff',
         alignItems: 'center',

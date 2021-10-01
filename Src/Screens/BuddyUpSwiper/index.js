@@ -46,7 +46,7 @@ const BuddyUpSwiper = ({ navigation }) => {
             .doc(parseData?._id)
             .onSnapshot((snapshot) => {
               let notificationsCount = 0;
-              if (snapshot.exists) {
+              if (snapshot?.exists) {
                 notificationsCount = Object.values(snapshot.data()).reduce(
                   (total = 0, num) => {
                     return total + num;
@@ -358,7 +358,7 @@ const BuddyUpSwiper = ({ navigation }) => {
                       <Image
                         style={
                           item.interests.includes("BBALL") ||
-                          item.interests.includes("bBall")
+                            item.interests.includes("bBall")
                             ? styles.activityIconBlue
                             : styles.activityIcon
                         }

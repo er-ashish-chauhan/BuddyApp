@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     },
     iconStylePage2: {
         height: verticalScale(70),
-        width: scale(75),
+        width: scale(80),
         marginTop: moderateScale(10)
     },
     inputHeadingText: {
