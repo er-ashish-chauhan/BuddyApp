@@ -32,7 +32,7 @@ const CustomSidebarMenu = (props) => {
   const proileImage = 'react_logo.png';
   const dispatch = useDispatch()
   return (
-    <View style={{ flex: 1, }}>
+    <View style={{ flex: 1 }}>
       {/*Top Large Image */}
       <View style={styles.imageContainer}>
         <Image

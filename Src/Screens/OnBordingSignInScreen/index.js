@@ -24,55 +24,8 @@ import { Loader } from "../../Components/Loader";
 import { AppleButton, appleAuth } from '@invertase/react-native-apple-authentication';
 import Toast from "react-native-simple-toast";
 import DataManager from "../../Components/DataManager";
-import { BREEDS, AGES } from "../../Theme/AppConstants";
+import { BREEDS, AGES, AGES_FOR_FRIEND, SIZES_FOR_FRIEND, ENERGY_LEVELS_FRIEND, BREEDS_FOR_FRIEND, ENERGY_LEVELS, SIZE } from "../../Theme/AppConstants";
 import { height, width } from "../../Theme/responsiveStyles";
-const age = [
-    { label: "Less than 1", value: "Less than 1" },
-    { label: "1-2 years", value: "1-2 years" },
-    { label: "2-4 years", value: "2-4 years" },
-    { label: "5-6 years", value: "5-6 years" },
-    { label: "6-7 years", value: "6-7 years" },
-    { label: "7-8 years", value: "7-8 years" },
-    { label: "8-10 years", value: "8-10 years" },
-    { label: "10-12 years", value: "10-12 years" },
-    { label: "12 or more years", value: "12 or more years" },
-]
-
-// const age = [
-//     { label: '0-5 Years', value: "0-5" },
-//     { label: '6-10 Years', value: "6-10" },
-//     { label: '11-15 Years', value: "11-15" },
-//     { label: '16-20 Years', value: "16-20" },
-//     { label: '21-25 Years', value: "21-25" },
-//     { label: '26-30 Years', value: "26-30" },
-// ]
-
-const size = [
-    { label: '15 lbs', value: '15lbs' },
-    { label: '15-25 lbs', value: '1525lbs' },
-    { label: '25-40 lbs', value: '2540lbs' },
-    { label: '40-60 lbs', value: '60lbs' },
-    { label: '60+ lbs', value: '60+lbs' },
-]
-
-const levels = [
-    { label: 'High Energy', value: 'Highenergy' },
-    { label: 'Work Hard Play Hard', value: 'WorkhardplayHard' },
-    { label: 'Sometimes Mellow', value: 'Sometimesmellow' },
-    { label: 'Couch Potato', value: 'CouchPotato' },
-]
-
-const breed = [
-    { label: 'Affenpinscher', value: 'Affenpinscher' },
-    { label: 'Airedale Terrier', value: 'AiredaleTerrier' },
-    { label: 'Akita', value: 'Akita' },
-    { label: 'Alaskan Husky', value: 'AlaskanHusky' },
-    { label: 'Alaskan Klee Kai', value: 'AlaskanKleeKai' },
-    { label: 'Alaskan Malamute', value: 'AlaskanMalamute' },
-    { label: 'American Cocker Spaniel', value: 'AmericanCockerSpaniel' },
-    { label: 'American English Coonhound', value: 'AmericanEnglishCoonhound' },
-    { label: 'American Eskimo Dog', value: 'AmericanEskimoDog' },
-]
 
 const OnBoardingSignInScreen = (props) => {
 
@@ -91,31 +44,18 @@ const OnBoardingSignInScreen = (props) => {
     const [FQUALITY, setFQuality] = useState(false)
     const [FBED, setFBED] = useState(false)
     const [FLEASH, setFLeash] = useState(false);
-    const [AgeForBuddyFriend, setAgeForBuddyFriend] = useState(AGES);
-    const [SizeForBuddyFriend, setSizeForBuddyFriend] = useState(size);
-    const [engeryForBuddyFriend, setEngeryForBuddyFriend] = useState(levels);
-    const [breedForBuddyFriend, setBreedForBuddyFriend] = useState(BREEDS);
+    const [breedName, setBreedName] = useState("");
+    const [breedNameForFriend, setBreedNameForFriend] = useState("");
+    const [showOther, setShowOther] = useState(false);
+    const [showOtherForFriend, setShowOtherForFriend] = useState(false);
+    const [AgeForBuddyFriend, setAgeForBuddyFriend] = useState(AGES_FOR_FRIEND);
+    const [SizeForBuddyFriend, setSizeForBuddyFriend] = useState(SIZES_FOR_FRIEND);
+    const [engeryForBuddyFriend, setEngeryForBuddyFriend] = useState(ENERGY_LEVELS_FRIEND);
+    const [breedForBuddyFriend, setBreedForBuddyFriend] = useState(BREEDS_FOR_FRIEND);
 
     const stateData = useSelector((state) => state.authenticationReducer)
 
     useEffect(() => {
-        const noPrefObj = { label: "No preference", value: "No preference" };
-        const currentAgesArr = AgeForBuddyFriend;
-        currentAgesArr.unshift(noPrefObj);
-        setAgeForBuddyFriend(currentAgesArr);
-
-        const currentSizeArr = SizeForBuddyFriend;
-        currentSizeArr.unshift(noPrefObj);
-        setSizeForBuddyFriend(currentSizeArr);
-
-        const currentEnergyArr = engeryForBuddyFriend;
-        currentEnergyArr.unshift(noPrefObj);
-        setEngeryForBuddyFriend(currentEnergyArr);
-
-        const currentBreedsArr = breedForBuddyFriend;
-        currentBreedsArr.unshift(noPrefObj);
-        setBreedForBuddyFriend(currentBreedsArr);
-
         DataManager.getAccessToken().then((res) => {
             console.log('resssss', res);
         })
@@ -234,7 +174,7 @@ const OnBoardingSignInScreen = (props) => {
                                     <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', }]}>
                                         <RNPickerSelect
                                             placeholder={placeholderSize}
-                                            items={size}
+                                            items={SIZE}
                                             onValueChange={value => {
                                                 setBSize(value)
                                             }}
@@ -258,7 +198,7 @@ const OnBoardingSignInScreen = (props) => {
                             <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', }]}>
                                 <RNPickerSelect
                                     placeholder={placeholderLevels}
-                                    items={levels}
+                                    items={ENERGY_LEVELS}
                                     onValueChange={value => {
                                         setBLevelse(value)
                                     }}
@@ -279,7 +219,7 @@ const OnBoardingSignInScreen = (props) => {
                                     placeholder={placeholderBreed}
                                     items={BREEDS}
                                     onValueChange={value => {
-                                        setBBreed(value)
+                                        setBBreed(value);
                                     }}
                                     style={pickerSelectStyles}
                                     value={BBREED}
@@ -291,6 +231,16 @@ const OnBoardingSignInScreen = (props) => {
                                 />
                             </TouchableOpacity>
                         </View>
+                        {BBREED == "Other" && (
+                            <View style={[styles.inputViewPage2, { marginTop: 30 }]}>
+                                <TextInputField
+                                    value={breedName}
+                                    onChangeText={(text) => setBreedName(text)}
+                                    placeHolderText={"Enter Breed name"}
+                                    placeHolderTextColor={"gray"}
+                                />
+                            </View>
+                        )}
                         <View style={[styles.inputViewPage2, { marginTop: 30 }]}>
                             <View style={{ width: '90%', justifyContent: "space-between", alignItems: "center" }}>
 
@@ -355,9 +305,9 @@ const OnBoardingSignInScreen = (props) => {
                     <TouchableOpacity
                         onPress={() => nextHandler()}
                         style={[styles.buttonPage2, {
-                            backgroundColor: colors.secondaryBlue,
-                            marginTop: 50,
-                            alignSelf: "center"
+                            backgroundColor: colors.primaryBlue,
+                            marginTop: 40,
+                            alignSelf: "center",
                         }]}>
                         <Text style={styles.buttonTextPage2}>Next Step</Text>
                     </TouchableOpacity>
@@ -447,7 +397,7 @@ const OnBoardingSignInScreen = (props) => {
                             <TouchableOpacity style={[styles.inputViewDropDown, { width: '90%', }]}>
                                 <RNPickerSelect
                                     placeholder={placeholderBreed}
-                                    items={BREEDS}
+                                    items={breedForBuddyFriend}
                                     onValueChange={value => {
                                         setFBreed(value)
                                     }}
@@ -461,6 +411,16 @@ const OnBoardingSignInScreen = (props) => {
                                 />
                             </TouchableOpacity>
                         </View>
+                        {FBREED == "Other" && (
+                            <View style={[styles.inputViewPage2, { marginTop: 30 }]}>
+                                <TextInputField
+                                    value={breedNameForFriend}
+                                    onChangeText={(text) => setBreedNameForFriend(text)}
+                                    placeHolderText={"Enter Breed name"}
+                                    placeHolderTextColor={"gray"}
+                                />
+                            </View>
+                        )}
                         <View style={[styles.inputViewPage2, { marginTop: 30 }]}>
                             <View style={{ width: '90%', justifyContent: "space-between", alignItems: "center" }}>
 
@@ -526,9 +486,9 @@ const OnBoardingSignInScreen = (props) => {
                     <TouchableOpacity
                         onPress={() => nextHandler()}
                         style={[styles.buttonPage2, {
-                            backgroundColor: colors.secondaryBlue,
+                            backgroundColor: colors.primaryBlue,
                             marginTop: 50,
-                            alignSelf: "center"
+                            alignSelf: "center",
                         }]}>
                         <Text style={styles.buttonTextPage2}>Almost Done</Text>
                     </TouchableOpacity>
@@ -577,7 +537,7 @@ const OnBoardingSignInScreen = (props) => {
                 </View>
                 <View style={styles.dogIconViewpage2}>
                     <Image
-                        resizeMode="cover"
+                        resizeMode="contain"
                         style={styles.iconStylePage2}
                         source={Images.Images.buddyUpLogo}
                     />
@@ -712,8 +672,8 @@ const OnBoardingSignInScreen = (props) => {
                         <TouchableOpacity
                             onPress={() => nextHandler()}
                             style={[styles.buttonPage2, {
-                                backgroundColor: colors.secondaryBlue,
-                                marginTop: 40
+                                backgroundColor: colors.primaryBlue,
+                                marginTop: 40,
                             }]}>
                             <Text style={styles.buttonTextPage2}>Next Step</Text>
                         </TouchableOpacity>
@@ -773,22 +733,11 @@ const OnBoardingSignInScreen = (props) => {
                 }
                 else if (BBREED == undefined && BBREED == null) {
                     Toast.show('Please select breed.', Toast.SHORT)
+                } else if (BBREED == "Other" && breedName.trim().length == 0) {
+                    Toast.show('Please enter the breed name.', Toast.SHORT)
                 } else {
                     pagerRef.current.setPage(index + 1)
                 }
-
-                // else if (FAGE == undefined && FAGE == null) {
-                //     Toast.show('Please select pereference age.', Toast.SHORT)
-                // }
-                // else if (FLEVELS == undefined && FLEVELS == null) {
-                //     Toast.show('Please select pereference level.', Toast.SHORT)
-                // }
-                // else if (FSIZE == undefined && FSIZE == null) {
-                //     Toast.show('Please select pereference size.', Toast.SHORT)
-                // }
-                // else if (FBREED == undefined && FBREED == null) {
-                //     Toast.show('Please select pereferences breed.', Toast.SHORT)
-                // }
                 break;
             case 3:
                 if (email.trim().length == 0) {
@@ -815,7 +764,9 @@ const OnBoardingSignInScreen = (props) => {
                     Toast.show('Please select size.', Toast.SHORT)
                 }
                 else if (BBREED == undefined && BBREED == null) {
-                    Toast.show('Please select breed.', Toast.SHORT)
+                    Toast.show('Please select breed.', Toast.SHORT);
+                } else if (FBREED == "Other" && breedNameForFriend.trim().length == 0) {
+                    Toast.show('Please enter the breed name.', Toast.SHORT)
                 } else {
                     dispatch(signupAction(
                         JSON.stringify({
@@ -826,7 +777,7 @@ const OnBoardingSignInScreen = (props) => {
                             "age": BAGE,
                             "size": BSIZE,
                             "energyLevel": BLEVELS,
-                            "breed": BBREED,
+                            "breed": BBREED != "Other" ? BBREED : breedName,
                             "interests": [
                                 BBALL && "bBall",
                                 BLEASH && "bLeash",
@@ -837,7 +788,7 @@ const OnBoardingSignInScreen = (props) => {
                                 "age": FAGE,
                                 "size": FSIZE,
                                 "energyLevel": FLEVELS,
-                                "breed": FBREED,
+                                "breed": FBREED != "Other" ? FBREED : breedNameForFriend,
                                 "interests": [FBALL && "fBall",
                                 FLEASH && "fLeash",
                                 FQUALITY && "fQuality",

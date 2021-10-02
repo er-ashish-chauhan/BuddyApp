@@ -26,13 +26,9 @@ export default function DrawerNavigation() {
   return (
     <Drawer.Navigator
       drawerType="slide"
-      sceneContainerStyle={{
-        flex: 1,
-        // backgroundColor: "#fff"
-      }}
       drawerContentOptions={{
         activeTintColor: colors.darkBlue,
-        style: { marginTop: "-15%" },
+        style: { marginTop: "-5%" },
         itemStyle: {
           marginVertical: 5,
         },

@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     iconStylePage2: {
-        height: verticalScale(70),
+        height: scale(80),
         width: scale(80),
         marginTop: moderateScale(10)
     },

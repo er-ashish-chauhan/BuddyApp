@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     },
 
     buttonChangePwd: {
-        height: 50,
+        height: 40,
         width: '95%',
         alignItems: 'center',
         justifyContent: 'center',
@@ -199,7 +199,7 @@ const styles = StyleSheet.create({
         // flex: 0.1, 
         position: "absolute",
         bottom: 0,
-        paddingVertical: 20,
+        paddingTop: 20,
         width: width,
         justifyContent: "center",
         alignItems: "center",
@@ -211,7 +211,6 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-
         elevation: 5,
     },
     DropDownView: {
@@ -312,8 +311,8 @@ const styles = StyleSheet.create({
         borderColor: colors.white
     },
     pImage: {
-        height: 100,
-        width: 100,
+        height: scale(100),
+        width: scale(90),
         borderRadius: 40
     },
     cameraIcon: {
