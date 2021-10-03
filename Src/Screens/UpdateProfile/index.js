@@ -175,7 +175,7 @@ export const ProfileUpate = (props) => {
 
         setName(userData.name)
         setBuddyName(userData.buddyName)
-        setBAge(parseFloat(userData.age))
+        setBAge(userData.age)
 
         setBBreed(checkBBreedIfOther > -1 ? userData.breed : "Other")
         setbreedName(userData.breed);

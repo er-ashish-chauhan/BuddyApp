@@ -126,7 +126,7 @@ const AllUserChatList = ({ navigation }) => {
         .limit(1);
 
       const unsub = messageRef.onSnapshot((querySnap) => {
-        if (querySnap.size) {
+        if (querySnap?.size) {
           let data = querySnap.docs[0].data();
           console.log("..doc", data);
           lastMessages[obj._id] = data.messages[0].text;
